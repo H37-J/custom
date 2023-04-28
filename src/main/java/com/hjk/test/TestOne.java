@@ -12,6 +12,7 @@ public class TestOne<T> {
     public static void main(String... args) {
         list.add(1);
         list.add(2);
+        list.add(3)
 
         Iterator<Integer> iter = list.iterator();
         while(iter.hasNext()) {
