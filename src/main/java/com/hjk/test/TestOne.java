@@ -3,20 +3,18 @@ package com.hjk.test;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
-import java.util.stream.Stream;
 
-public class TestOne<T> {
+public class TestOne {
 
-    private static ArrayList<Integer> list = new ArrayList<>();
+    private static final ArrayList<Integer> list = new ArrayList<>();
 
     public static void main(String... args) {
         list.add(1);
         list.add(2);
         list.add(3);
+        list.add(4);
 
-        Iterator<Integer> iter = list.iterator();
-        while(iter.hasNext()) {
-            var test = iter.next();
+        for (Integer test : list) {
             System.out.println(test);
         }
 
@@ -24,6 +22,4 @@ public class TestOne<T> {
         System.out.println(test);
     }
 
-    public void test () {
-    }
 }
