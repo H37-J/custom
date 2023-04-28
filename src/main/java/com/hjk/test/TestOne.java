@@ -2,7 +2,6 @@ package com.hjk.test;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 
 public class TestOne {
 
@@ -13,6 +12,7 @@ public class TestOne {
         list.add(2);
         list.add(3);
         list.add(4);
+        list.add(5);
 
         for (Integer test : list) {
             System.out.println(test);
