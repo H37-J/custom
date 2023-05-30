@@ -1,4 +1,4 @@
-package com.hjk.strings;
+package com.hjk.utils.strings;
 
 import java.util.List;
 

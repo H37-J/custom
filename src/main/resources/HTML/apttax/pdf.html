@@ -1,0 +1,88 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <!--  <link rel="manifest" href="site.webmanifest">-->
+  <!--  <link rel="apple-touch-icon" href="icon.png">-->
+
+  <link rel="stylesheet" href="./css/custom.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <script src="//mozilla.github.io/pdf.js/build/pdf.js"></script>
+
+
+  <style>
+    body {
+      background: white;
+    }
+  </style>
+
+</head>
+
+<body>
+
+<div class="flex flex-col flex-1">
+  <header>
+    <div class="flex align-items-center p-3">
+      <img alt="#" src="images/logo.png">
+
+      <div class="fw-bolder fs-1">
+        <span class="ps-4">MENU</span>
+        <span class="ps-4">MENU</span>
+        <span class="ps-4">MENU</span>
+        <span class="ps-4">MENU</span>
+      </div>
+
+      <div class="flex flex-1 justify-content-end">
+        <img alt="#" src="images/nav_call.png">
+      </div>
+    </div>
+  </header>
+
+  <div class="border"></div>
+
+  <div id="main" class="flex flex-1 flex-row">
+    <div id="side" class="flex flex-col border-end border-gray-00 w-125px">
+      <a class="text-black" href="apttax.html"> <div class="btn rounded-0 bg-hover-light p-6 w-100">회원정보</div></a>
+      <a class="text-black" href="apptax-list.html"><div class="btn rounded-0 bg-hover-light p-6 w-100">계약정보</div></a>
+    </div>
+
+    <div id="content" class="flex flex-col w-100 p-8">
+
+      <canvas id="pdf"></canvas>
+
+    </div>
+  </div>
+
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" type=""></script>
+<script src="./js/apt.js"></script>
+
+  <script>
+    window.onload = () => {
+      viewPdf()
+    }
+
+  </script>
+
+</body>
+
+
+</html>
+
+
+

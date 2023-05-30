@@ -1,0 +1,130 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <!--  <link rel="manifest" href="site.webmanifest">-->
+  <!--  <link rel="apple-touch-icon" href="icon.png">-->
+
+  <link rel="stylesheet" href="./css/custom.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+  <meta name="theme-color" content="#fafafa">
+
+  <style>
+    body {
+      background: white;
+    }
+  </style>
+
+</head>
+
+<body>
+
+<div class="flex flex-col flex-1">
+  <header>
+    <div class="flex align-items-center p-3">
+      <img alt="#" src="images/logo.png">
+
+      <div class="fw-bolder fs-1">
+        <span class="ps-4">MENU</span>
+        <span class="ps-4">MENU</span>
+        <span class="ps-4">MENU</span>
+        <span class="ps-4">MENU</span>
+      </div>
+
+      <div class="flex flex-1 justify-content-end">
+        <img alt="#" src="images/nav_call.png">
+      </div>
+    </div>
+  </header>
+
+  <div class="border"></div>
+
+  <div id="main" class="flex flex-1 flex-row">
+    <div id="side" class="flex flex-col border-end border-gray-00 w-125px">
+      <a class="text-black" href="apttax.html"> <div class="btn rounded-0 bg-hover-light p-6 w-100">회원정보</div></a>
+      <a class="text-black" href="apptax-list.html"><div class="btn rounded-0 bg-hover-light p-6 w-100">계약정보</div></a>
+      <a class="text-black" href="kakao.html"><div class="btn rounded-0 bg-hover-light p-6 w-100">카카오</div></a>
+    </div>
+
+    <div id="content" class="flex flex-col w-100 p-8">
+      <div class="flex flex-row align-items-center mb-3">
+        <div class="flex"><h2><span id="month"></span>월 세금계산서 발행목록</h2><h2 id="totalCount"></h2></div>
+        <div class="flex flex-1 justify-content-end">
+          <button type="button" onclick="sendKakaoAll(this)" class="btn btn-primary me-3">전체발송</button>
+          <select onchange="changeDate(this)" id="selectedDate" class="form-select w-200px" aria-label="Select example">
+            <option>해당월을 선택 해주세요</option>
+            <option id="date_202301" value="202301" month="1">2023년 1월</option>
+            <option id="date_202302" value="202302" month="2">2023년 2월</option>
+            <option id="date_202303" value="202303" month="3">2023년 3월</option>
+            <option id="date_202304" value="202304" month="4">2023년 4월</option>
+            <option id="date_202305" value="202305" month="5">2023년 5월</option>
+            <option id="date_202306" value="202306" month="6">2023년 6월</option>
+            <option id="date_202307" value="202307" month="7">2023년 7월</option>
+            <option id="date_202308" value="202308" month="8">2023년 8월</option>
+            <option id="date_202309" value="202309" month="9">2023년 9월</option>
+            <option id="date_202310" value="202310" month="10">2023년 10월</option>
+            <option id="date_202311" value="202311" month="11">2023년 11월</option>
+            <option id="date_202312" value="202312" month="12">2023년 12월</option>
+          </select>
+        </div>
+      </div>
+      <div class="border"></div>
+
+      <table id="content-list" class="table table-striped table-row-bordered gy-5 gs-7">
+        <thead>
+        <tr class="fw-semibold fs-6 text-gray-800">
+          <th>코드</th>
+          <th>단지명</th>
+          <th>이메일</th>
+          <th>전화번호</th>
+          <th>사업자등록번호</th>
+          <th>비고</th>
+          <th>알림톡발송</th>
+        </tr>
+        </thead>
+        <tbody id="list">
+        </tbody>
+      </table>
+
+
+      <ul class="pagination">
+        <li onclick="prevPage(this)" id="prevButton" class="page-item previous"><a href="#" class="page-link"><i class="previous"></i></a></li>
+        <div id="page-container" class="flex">
+
+        </div>
+        <li onclick="nextPage(this)" id="nextButton" class="page-item next"><a href="#"  class="page-link"><i class="next"></i></a></li>
+      </ul>
+      <label for="startPage"></label><input id="startPage" type="number" value=1 class="hidden">
+      <label for="endPage"></label><input id="endPage" type="number" value=10 class="hidden">
+      <label for="currentPage"></label><input id="currentPage" type="number" value=1 class="hidden">
+      <label for="totalPage"></label><input id="totalPage" type="number" value="" class="hidden">
+    </div>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" type=""></script>
+<script src="./js/kakao.js"></script>
+
+<script>
+  init()
+</script>
+
+</body>
+
+
+</html>

@@ -19,18 +19,64 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'com.microsoft.sqlserver:mssql-jdbc'
-	implementation 'io.doov:doov-core:2.+'
+	//Boot
+	implementation 'org.springframework.boot:spring-boot-starter:3.1.0'
+	implementation 'org.springframework.boot:spring-boot-starter-web-services:3.0.4'
+	implementation 'org.springframework.boot:spring-boot-starter-web:3.1.0'
+	implementation 'org.springframework.boot:spring-boot-starter-test:3.1.0'
+	implementation 'org.springframework.boot:spring-boot-devtools:3.0.4'
+	implementation 'org.springframework.boot:spring-boot-starter-validation:3.0.4'
+//	implementation 'org.springframework.boot:spring-boot-starter-security'
+	//implementation 'org.springframework.boot:spring-boot-starter-websocket'
+	//implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	//implementation 'org.springframework.boot:spring-boot-starter-batch'
+	implementation 'org.springframework.boot:spring-boot-starter-webflux:3.0.4'
+	//implementation 'org.springframework.security:spring-security-oauth2-client'
+	//implementation 'org.springframework.security:spring-security-oauth2-jose'
+	//implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	//implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
 
+	//AOP
+	implementation 'org.springframework.boot:spring-boot-starter-aop:3.0.4'
 
-	compileOnly 'org.projectlombok:lombok'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	//Database
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc:3.0.4'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.0.4'
+	implementation 'com.h2database:h2:2.1.214'
+	implementation 'commons-dbcp:commons-dbcp:1.4'
+
+	implementation 'com.microsoft.sqlserver:mssql-jdbc:12.2.0.jre11'
+	implementation 'io.doov:doov-core:2.7.8'
+
+	//Websocket
+	implementation "javax.websocket:javax.websocket-api:1.1"
+
+	//Json
+	implementation 'com.google.code.gson:gson:2.10.1'
+	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.14.2'
+
+	//Lombok
+	implementation 'org.projectlombok:lombok:1.18.26'
+
+	//money
+	implementation 'org.joda:joda-money:1.0.3'
+
+	//Test
+	implementation 'junit:junit:4.13.2'
+
+	//Time
+	implementation 'joda-time:joda-time:2.12.2'
+
+	//Swagger
+	implementation 'io.springfox:springfox-swagger2:3.0.0'
+
+	//Common
+	implementation 'commons-io:commons-io:2.11.0'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator:3.1.0'
+
+	annotationProcessor('org.projectlombok:lombok:1.18.26')
+	testAnnotationProcessor('org.projectlombok:lombok:1.18.26')
+
 }
 
 tasks.named('test') {

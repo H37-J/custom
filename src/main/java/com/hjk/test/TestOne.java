@@ -1,15 +1,12 @@
 package com.hjk.test;
 
-import com.hjk.strings.StringUtils;
-import io.doov.core.dsl.DOOV;
-import org.springframework.data.jpa.repository.query.QueryUtils;
+import com.hjk.utils.strings.StringUtils;
 
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class TestOne {
 
@@ -17,6 +14,7 @@ public class TestOne {
 
 
     public static void main(String... args) {
+
 
     }
 
@@ -37,6 +35,7 @@ public class TestOne {
 
 
     public void listTest() {
+
         list.add(1);
         list.add(2);
         list.add(3);

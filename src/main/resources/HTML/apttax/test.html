@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+   <input type="email" id="email" value="">
+   <input type="text" id="tel" value="">
+   <button type="button" onclick="check()">check</button>
+
+</body>
+
+<script>
+  const check = () => {
+    const regex = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
+    console.log(regex.test('these9907@naver.com'))
+  }
+  check()
+</script>
+
+
+</html>

@@ -1,0 +1,113 @@
+[
+  [
+    {
+      "name": "cont_period",
+      "value": "2년"
+    },
+    {
+      "name": "cont_dt_from",
+      "value": "2023.05.31"
+    },
+    {
+      "name": "cont_dt_to",
+      "value": "2024.05.03"
+    },
+    {
+      "name": "apt_sort",
+      "value": "1"
+    },
+    {
+      "name": "guide_include_chk",
+      "value": "Y"
+    },
+    {
+      "name": "mo_re_amt",
+      "value": "30000"
+    },
+    {
+      "name": "mo_re_amt_ann",
+      "value": "330,000"
+    },
+    {
+      "name": "form_type",
+      "value": "default"
+    },
+    {
+      "name": "YN_BIZ_MGR",
+      "value": "N"
+    },
+    {
+      "name": "BIZ_MGR",
+      "value": ""
+    },
+    {
+      "name": "mgr_biz_name",
+      "value": ""
+    },
+    {
+      "name": "mgr_rep_name",
+      "value": ""
+    },
+    {
+      "name": "mgr_biz_num",
+      "value": ""
+    },
+    {
+      "name": "mgr_biz_addr1",
+      "value": ""
+    },
+    {
+      "name": "mgr_biz_addr2",
+      "value": ""
+    },
+    {
+      "name": "mgr_biz_tel1",
+      "value": ""
+    },
+    {
+      "name": "mgr_biz_tel2",
+      "value": ""
+    },
+    {
+      "name": "mgr_biz_tel3",
+      "value": ""
+    },
+    {
+      "name": "sort",
+      "value": "re_cont"
+    }
+  ]
+]
+
+
+box:Box[docBox]={command=doc0100SREmailIR,
+docData=[[{"name":"cont_period","value":"2년"},
+{"name":"cont_dt_from","value":"2023.05.31"},
+{"name":"cont_dt_to","value":"2024.05.03"},
+{"name":"apt_sort","value":"1"},
+{"name":"guide_include_chk","value":"Y"},
+{"name":"mo_re_amt","value":"50000"},
+{"name":"mo_re_amt_ann","value":"550,000"},
+{"name":"form_type","value":"default"},
+{"name":"YN_BIZ_MGR","value":"N"},
+{"name":"BIZ_MGR","value":""},
+{"name":"mgr_biz_name","value":""},
+{"name":"mgr_rep_name","value":""},
+{"name":"mgr_biz_num","value":""},
+{"name":"mgr_biz_addr1","value":""},
+{"name":"mgr_biz_addr2","value":""},
+{"name":"mgr_biz_tel1","value":""},
+{"name":"mgr_biz_tel2","value":""},
+{"name":"mgr_biz_tel3","value":""},
+{"name":"sort","value":"re_cont"}]],
+apt_code=95001,
+accountant=신우,
+kor_name=기웅아파트,
+apt_cnt=2200,
+amt=160000,
+email=these9907@kwic.co.kr,
+email_code=cont05,
+issue_acct=,
+ssMngId=apt,
+ssMngNm=기웅정보통신,
+ssMngAuth=AAA, ssMngSubAuth=A, datasource=APT_TAX, sms_db=sms_db, https://apt.billmate.co.kr=, query=/Users/hjk/Desktop/workspace/apttax-web/out/WEB-INF/query, ss_id=apt, ss_nm=기웅정보통신, ss_grp=XPERP, ss_auth=AAA, doc_key=9500120230522151936, guide_include_chk=Y, BIZ_MGR=, mgr_biz_name=, cont_period=2년, mo_re_amt=50000, cont_dt_from=2023.05.31, mo_re_amt_ann=550,000, cont_dt_to=2024.05.03, mgr_biz_tel2=, mgr_biz_addr1=, mgr_biz_tel3=, mgr_biz_addr2=, form_type=default, mgr_biz_tel1=, sort=re_cont, apt_sort=1, mgr_biz_num=, YN_BIZ_MGR=N, mgr_rep_name=, ord=0, sToday=20230522}

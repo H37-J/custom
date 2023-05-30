@@ -17,11 +17,8 @@
 
   <link rel="stylesheet" href="./css/custom.css">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <script src="//mozilla.github.io/pdf.js/build/pdf.js"></script>
 
-  <meta name="theme-color" content="#fafafa">
 
   <style>
     body {
@@ -53,10 +50,12 @@
 
   <div class="border"></div>
 
-  <div class="flex flex-1 flex-row">
+  <div id="main" class="flex flex-1 flex-row">
     <div id="side" class="flex flex-col border-end border-gray-00 w-125px">
-      <div class="btn rounded-0 bg-hover-light p-6">회원정보</div>
-      <div class="btn rounded-0 bg-hover-light p-6">계약정보</div>
+      <a class="text-black" href="apttax.html"> <div class="btn rounded-0 bg-hover-light p-6 w-100">회원정보</div></a>
+      <a class="text-black" href="apptax-list.html"><div class="btn rounded-0 bg-hover-light p-6 w-100">계약정보</div></a>
+      <a class="text-black" href="kakao.html"><div class="btn rounded-0 bg-hover-light p-6 w-100">카카오</div></a>
+
     </div>
 
     <div id="content" class="flex flex-col w-100 p-8">
@@ -83,32 +82,32 @@
       <div class="border border-dark">
         <div class="flex">
           <div class="col-4 flex justify-content-center p-3 fw-bolder">단지명(단지코드)</div>
-          <div class="col-8 flex justify-content-center p-3 fw-bolder">기웅아파트(12345)</div>
+          <div id="apt_code" class="col-8 flex justify-content-center p-3 fw-bolder"></div>
         </div>
 
         <div class="flex">
           <div class="col-4 flex justify-content-center p-3 fw-bolder">계약기간</div>
-          <div class="col-8 flex justify-content-center p-3 fw-bolder">test</div>
+          <div id="contract_date" class="col-8 flex justify-content-center p-3 fw-bolder"></div>
         </div>
 
         <div class="flex">
           <div class="col-4 flex justify-content-center p-3 fw-bolder">계약금액</div>
-          <div class="col-8 flex justify-content-center p-3 fw-bolder">test</div>
+          <div id ="cost" class="col-8 flex justify-content-center p-3 fw-bolder"></div>
         </div>
 
         <div class="flex">
           <div class="col-4 flex justify-content-center p-3 fw-bolder">납부주기</div>
-          <div class="col-8 flex justify-content-center p-3 fw-bolder">test</div>
+          <div id="pmt_cycle" class="col-8 flex justify-content-center p-3 fw-bolder"></div>
         </div>
 
         <div class="flex">
           <div class="col-4 flex justify-content-center p-3 fw-bolder">납부방법</div>
-          <div class="col-8 flex justify-content-center p-3 fw-bolder">test</div>
+          <div id="pmt_way" class="col-8 flex justify-content-center p-3 fw-bolder"></div>
         </div>
 
         <div class="flex">
           <div class="col-4 flex justify-content-center p-3 fw-bolder">수수료청구일</div>
-          <div class="col-8 flex justify-content-center p-3 fw-bolder">test</div>
+          <div id="pmt_date" class="col-8 flex justify-content-center p-3 fw-bolder"></div>
         </div>
       </div>
 
@@ -117,34 +116,40 @@
       </div>
 
       <div class="border border-dark">
-        <div class="flex">
+        <div class="flex align-items-center">
           <div class="col-4 flex justify-content-center p-3 fw-bolder">단지명(단지코드)</div>
-          <div class="col-8 flex justify-content-center p-3 fw-bolder">기웅아파트(12345)</div>
+          <div id="next_apt_code" class="col-8 flex justify-content-center p-3 fw-bolder"></div>
         </div>
 
-        <div class="flex">
+        <div class="flex align-items-center">
           <div class="col-4 flex justify-content-center p-3 fw-bolder">계약기간</div>
-          <div class="col-8 flex justify-content-center p-3 fw-bolder">test</div>
+          <div class="col-8 flex justify-content-center p-3 fw-bolder align-items-center">
+            <input id="next_cont_from"  type="text" class="w-200px h-40px me-3 form-control text-center" placeholder="시작일"/>
+            ~ &nbsp;
+            <input id="next_cont_to"  type="text" class="w-200px h-40px me-3 form-control text-center" placeholder="종료일"/>
+          </div>
         </div>
 
-        <div class="flex">
+        <div class="flex align-items-center">
           <div class="col-4 flex justify-content-center p-3 fw-bolder">계약금액</div>
-          <div class="col-8 flex justify-content-center p-3 fw-bolder">test</div>
+          <div class="col-8 flex justify-content-center p-3 fw-bolder align-items-center">
+            <input id="next_cost" onkeyup="constChange(this)" type="text" class="w-200px h-40px me-3 form-control text-center" placeholder="계약금액"/>
+          </div>
         </div>
 
-        <div class="flex">
+        <div class="flex align-items-center">
           <div class="col-4 flex justify-content-center p-3 fw-bolder">납부주기</div>
-          <div class="col-8 flex justify-content-center p-3 fw-bolder">test</div>
+          <div id="next_pmt_cycle" class="col-8 flex justify-content-center p-3 fw-bolder"></div>
         </div>
 
-        <div class="flex">
+        <div class="flex align-items-center">
           <div class="col-4 flex justify-content-center p-3 fw-bolder">납부방법</div>
-          <div class="col-8 flex justify-content-center p-3 fw-bolder">test</div>
+          <div id="next_pmt_way" class="col-8 flex justify-content-center p-3 fw-bolder">test</div>
         </div>
 
-        <div class="flex">
+        <div class="flex align-items-center">
           <div class="col-4 flex justify-content-center p-3 fw-bolder">수수료청구일</div>
-          <div class="col-8 flex justify-content-center p-3 fw-bolder">test</div>
+          <div id="next_pmt_date" class="col-8 flex justify-content-center p-3 fw-bolder">test</div>
         </div>
 
         <div class="flex justify-content-center mt-12">
@@ -162,14 +167,30 @@
     </div>
   </div>
 
+  <label for="code"></label><input style="display: none" type="text" value="" id="code">
+
+  <div class="flex justify-content-center mt-12 mb-12">
+    <div onclick="createContract()" class="btn btn-primary col-6 fw-boldest cursor-pointer">계약서작성</div>
+  </div>
+
+
+
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" type=""></script>
 <script src="./js/apt.js"></script>
 
 <script>
+  getContract('95001')
+
+
+
 </script>
 
 </body>
 
 
 </html>
+
+
+

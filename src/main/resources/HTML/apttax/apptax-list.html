@@ -1,0 +1,136 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <!--  <link rel="manifest" href="site.webmanifest">-->
+  <!--  <link rel="apple-touch-icon" href="icon.png">-->
+
+  <link rel="stylesheet" href="./css/custom.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+  <meta name="theme-color" content="#fafafa">
+
+  <style>
+    body {
+      background: white;
+    }
+  </style>
+
+</head>
+
+<body>
+
+<div class="flex flex-col flex-1">
+  <header>
+    <div class="flex align-items-center p-3">
+      <img alt="#" src="images/logo.png">
+
+      <div class="fw-bolder fs-1">
+        <span class="ps-4">MENU</span>
+        <span class="ps-4">MENU</span>
+        <span class="ps-4">MENU</span>
+        <span class="ps-4">MENU</span>
+      </div>
+
+      <div class="flex flex-1 justify-content-end">
+        <img alt="#" src="images/nav_call.png">
+      </div>
+    </div>
+  </header>
+
+  <div class="border"></div>
+
+  <div id="main" class="flex flex-1 flex-row">
+    <div id="side" class="flex flex-col border-end border-gray-00 w-125px">
+      <a class="text-black" href="apttax.html"> <div class="btn rounded-0 bg-hover-light p-6 w-100">회원정보</div></a>
+      <a class="text-black" href="apptax-list.html"><div class="btn rounded-0 bg-hover-light p-6 w-100">계약정보</div></a>
+      <a class="text-black" href="kakao.html"><div class="btn rounded-0 bg-hover-light p-6 w-100">카카오</div></a>
+    </div>
+
+    <div id="content" class="flex flex-col w-100 p-8">
+      <div class="flex flex-row align-items-center mb-3">
+        <div><h2>세무주치의 계약정보</h2></div>
+      </div>
+      <div class="border"></div>
+
+      <table id="content-list" class="table table-striped table-row-bordered gy-5 gs-7">
+        <thead>
+        <tr class="fw-semibold fs-6 text-gray-800">
+          <th>코드</th>
+          <th>단지명</th>
+          <th>가입일</th>
+          <th>계약갱신</th>
+          <th>청구일</th>
+          <th>계약시작일</th>
+          <th>계약종료일</th>
+          <th>계약주기</th>
+          <th>금액</th>
+          <th>납부주기</th>
+          <th>납부구분</th>
+          <th>세무대리</th>
+          <th>폼</th>
+
+          <th>청구일</th>
+          <th>계약시작일</th>
+          <th>계약종료일</th>
+          <th>계약주기</th>
+          <th>금액</th>
+          <th>납부주기</th>
+          <th>납부구분</th>
+          <th>세무대리</th>
+          <th>폼</th>
+
+          <th>계약방법</th>
+          <th>재계약단계</th>
+          <th>승인</th>
+          <th>이슈</th>
+          <th>합산코드</th>
+          <th>계약서</th>
+          <th>로그</th>
+
+        </tr>
+        </thead>
+        <tbody id="list">
+        </tbody>
+      </table>
+
+
+      <ul class="pagination">
+        <li class="page-item previous disabled"><a href="#" class="page-link"><i class="previous"></i></a></li>
+        <li onclick="getList(1)" class="page-item"><a href="#" class="page-link">1</a></li>
+        <li onclick="getList(2)" class="page-item"><a href="#" class="page-link">2</a></li>
+        <li onclick="getList(3)" class="page-item"><a href="#" class="page-link">3</a></li>
+        <li onclick="getList(4)" class="page-item"><a href="#" class="page-link">4</a></li>
+        <li onclick="getList(5)" class="page-item"><a href="#" class="page-link">5</a></li>
+        <li onclick="getList(6)" class="page-item"><a href="#" class="page-link">6</a></li>
+        <li onclick="getList(7)" class="page-item next"><a href="#"  class="page-link"><i class="next"></i></a></li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" type=""></script>
+<script src="./js/apt.js"></script>
+
+<script>
+  getList(1)
+</script>
+
+</body>
+
+
+</html>

@@ -89,6 +89,24 @@ hr:not([size]) {
   height: 1px
 }
 
+a {
+  color: transparent;
+  text-decoration: none
+}
+
+
+
+a:hover {
+  color: #006dab;
+  text-decoration: underline
+}
+
+a:not([href]):not([class]),
+a:not([href]):not([class]):hover {
+  color: inherit;
+  text-decoration: none
+}
+
 .h1,
 .h2,
 .h3,
