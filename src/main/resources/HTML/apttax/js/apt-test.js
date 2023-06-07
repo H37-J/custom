@@ -1,27 +1,52 @@
 import axios from 'axios'
 
-
-const getTest = (APT_CODE) => {
+const getTest = () => {
+  const command = 'insertIp'
+  const ip_address = '130.15.243.164'
+  const url = '3'
   const config = {
     method: 'post',
     maxBodyLength: Infinity,
-    url: `https://apttax.co.kr/CustomContractAction.do`,
+    url: `http://localhost:8081/PageAction.do`,
     headers: {
-      'Cookie': 'JSESSIONID=92DCEA4B318D357F5F2EBA31792D078D',
       "Content-Type": 'application/x-www-form-urlencoded'
     },
     data: {
-      command: 'getContractFile',
-      apt_code: '95001'
+      command,
+      ip_address,
+      url
     }
   }
-
 
   axios(config).then((res) => {
     console.log(res.data)
   })
 }
+
 getTest()
+
+
+// const getTest = (APT_CODE) => {
+//   const config = {
+//     method: 'post',
+//     maxBodyLength: Infinity,
+//     url: `https://apttax.co.kr/CustomContractAction.do`,
+//     headers: {
+//       'Cookie': 'JSESSIONID=92DCEA4B318D357F5F2EBA31792D078D',
+//       "Content-Type": 'application/x-www-form-urlencoded'
+//     },
+//     data: {
+//       command: 'getContractFile',
+//       apt_code: '95001'
+//     }
+//   }
+//
+//
+//   axios(config).then((res) => {
+//     console.log(res.data)
+//   })
+// }
+// getTest()
 //
 // const saveTest = (APT_CODE) => {
 //   const config = {
