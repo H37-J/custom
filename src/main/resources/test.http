@@ -1,0 +1,26 @@
+GRAPHQL http://localhost:8080/graphql
+
+query {
+    getUsers {
+        id
+        name
+        products {
+            id
+            name
+        }
+    }
+}
+
+### 2
+GRAPHQL http://localhost:8080/graphql
+
+query {
+    getUser(name: "H2") {
+        id
+        name
+        products {
+            id
+            name
+        }
+    }
+}

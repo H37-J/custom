@@ -1,0 +1,40 @@
+server:
+  port: 8080
+logging:
+  pattern:
+    console: "%clr([%d{HH:mm:ss.SSS}]){yellow} %clr([%-5level]){green} %clr([%logger.%method:line-%line]){cyan} - %msg%n"
+  file:
+    name: /home/logs/members/membersLog.log
+  level:
+    root: info
+    kr.co.ebricks.members: debug
+    org:
+      springframework: warn
+      hibernate:
+        sql: debug
+        type:
+          descriptor:
+            sql:
+              BasicBinder: trace
+  logback:
+    rollingpolicy:
+      max-history: 30
+      file-name-pattern: ${LOG_FILE}.%d{yyyy-MM-dd}-%i
+      max-file-size: 500MB
+
+spring:
+  datasource:
+    url: jdbc:mariadb://localhost:3307/hjk
+    username: root
+    password: star8903
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MariaDBDialect
+    hibernate:
+      ddl-auto: update
+
+  graphql:
+    graphql:
+      enable: true
+      printer:
+        enable: true

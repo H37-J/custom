@@ -1,0 +1,24 @@
+type User {
+    id: ID!
+    name: String!
+    products: [Product]!
+}
+
+type Product {
+    id: ID!
+    name: String!
+    user: User!
+}
+
+
+type Query {
+    getUser(name: String): User
+    getUsers: [User]
+    getProducts: [Product]
+}
+
+type Mutation {
+    saveUser(name: String!): User
+}
+
+
