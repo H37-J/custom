@@ -1,4 +1,4 @@
-package com.hjk.custom.utils.algorithms;
+package com.hjk.custom.utils.algorithms.utils;
 
 import java.util.*;
 import java.util.stream.Stream;
@@ -8,7 +8,6 @@ public class Utils {
     public static void main(String... args) {
 //        setAll(5);
 //        sort();
-        test5();
     }
 
     public static void print(int[] arr) {
@@ -32,7 +31,6 @@ public class Utils {
 
     public static void sort() {
         String[] arr = {"a", "b", "c"};
-//        Arrays.sort(arr, new Descending());
         System.out.println(Arrays.toString(arr));
     }
 
@@ -60,7 +58,9 @@ public class Utils {
 
     public static void test2() {
         String[] arr = {"a", "b", "C", "d"};
-        String[] temp = Arrays.stream(arr).sorted(String.CASE_INSENSITIVE_ORDER.reversed()).toArray(String[]::new);
+        String[] temp = Arrays.stream(arr)
+                .sorted(String.CASE_INSENSITIVE_ORDER.reversed())
+                .toArray(String[]::new);
         System.out.println(Arrays.toString(temp));
     }
 
@@ -68,27 +68,4 @@ public class Utils {
         Stream<String[]> StreamArray = Stream.of(new String[]{"abc"}, new String[]{"dfg"});
         Stream<String> stream = StreamArray.flatMap(Arrays::stream);
     }
-
-    public static void test4() {
-        Set<Integer> set = new HashSet<>();
-        set.add(1);
-    }
-
-    public static void test5() {
-        Map<String, Object> map = new HashMap<>();
-        map.put("id", "1");
-        map.put("name", "test");
-
-    }
 }
-
-//class Descending implements Comparator {
-//    public int compare(Object o1, Object o2) {
-//        if(o1 instanceof Comparable<?> && o2 instanceof Comparable<?>) {
-//            Comparable c1 = (Comparable) o1;
-//            Comparable c2 = (Comparable) o2;
-//            return c1.compareTo(c2) - 1;
-//        }
-//        return -1;
-//    }
-//}

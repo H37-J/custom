@@ -1,7 +1,6 @@
-package com.hjk.custom.utils.algorithms;
+package com.hjk.custom.utils.algorithms.utils;
 
 
-import org.springframework.cglib.core.Local;
 import org.springframework.core.convert.converter.Converter;
 
 import java.time.*;
@@ -26,15 +25,13 @@ public class StreamUtils {
     public void t1() {
         Converter<String, Integer> converter = Integer::valueOf;
         Integer converted = converter.convert("123");
-        System.out.println(converted);
     }
 
     public void t2() {
         Predicate<String> predicate = (s) -> !s.isEmpty();
         predicate.test("test");
 
-        Predicate<Boolean> nonNull = Objects::nonNull;
-        ;
+        Predicate<Boolean> nonNull = Objects::nonNull;;
         Predicate<Boolean> isNull = Objects::isNull;
 
         Predicate<String> isEmpty = String::isEmpty;
@@ -67,9 +64,6 @@ public class StreamUtils {
 
         var result1 = comparator.compare(p1, p2);
         var result2 = comparator.reversed().compare(p1, p2);
-
-        System.out.println(result1);
-        System.out.println(result2);
     }
 
     public void t7() {
@@ -89,7 +83,6 @@ public class StreamUtils {
         list.add(4);
         list.add(5);
         long count = list.stream().filter(val -> val > 2).count();
-        System.out.println(count);
     }
 
     public void t9() {
@@ -100,7 +93,6 @@ public class StreamUtils {
         list.add(4);
 
         var result = list.stream().reduce(Integer::sum).get();
-        System.out.println(result);
     }
 
     public void t10() {
@@ -108,7 +100,6 @@ public class StreamUtils {
         for (int i = 0; i < 10; i++) {
             map.putIfAbsent(i, i);
         }
-//        map.forEach((key, value) -> System.out.println(key + "," + value));
 
         map.computeIfPresent(1, Integer::sum);
         map.computeIfAbsent(1, num -> 100);
@@ -168,7 +159,9 @@ public class StreamUtils {
         list.add("b");
         list.add("c");
         var value = list.stream()
-                .filter(s -> s.equals("b")).findFirst().orElse("not found");
+                .filter(s -> s.equals("b"))
+                .findFirst()
+                .orElse("not found");
     }
 
     public void t14() {
@@ -190,16 +183,13 @@ public class StreamUtils {
 
         Map<Character, List<String>> grouped = map.collect(Collectors.groupingBy(s -> s.charAt(0)));
         grouped.forEach((key, value) -> {
-            System.out.println(key);
             value.forEach(System.out::println);
         });
     }
 
     public void t16() {
         Object obj = null;
-        if (obj == null) {
-            throw new NullPointerException();
-        }
+        throw new NullPointerException();
     }
 
     public void t17() {

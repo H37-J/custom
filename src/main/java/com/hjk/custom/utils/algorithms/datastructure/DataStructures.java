@@ -1,4 +1,4 @@
-package com.hjk.custom.utils.algorithms;
+package com.hjk.custom.utils.algorithms.datastructure;
 
 import java.util.*;
 
@@ -249,8 +249,6 @@ class NodeList<T> implements Iterable<T> {
             current = current.next;
             return value;
         }
-
-
     }
 }
 
@@ -304,7 +302,6 @@ class Tree<T> {
 class QueueNode<T> {
 
     Node<T> front;
-
 
     public QueueNode() {
         front = new Node<>();
