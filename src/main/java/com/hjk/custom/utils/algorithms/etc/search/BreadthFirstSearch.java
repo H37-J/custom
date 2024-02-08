@@ -1,6 +1,7 @@
 package com.hjk.custom.utils.algorithms.etc.search;
 
-import com.hjk.custom.utils.algorithms.etc.datastructure.Node;
+
+import lombok.Getter;
 
 import java.util.*;
 
@@ -34,6 +35,21 @@ public class BreadthFirstSearch<T> {
 
 
         return Optional.empty();
+    }
+
+    @Getter
+    public static class Node<E> {
+        private final E value;
+        private final List<Node<E>> children;
+
+        public Node(final E value) {
+            this.value = value;
+            this.children = new ArrayList<>();
+        }
+
+        public void add(Node<E> node) {
+            children.add(node);
+        }
     }
 }
 

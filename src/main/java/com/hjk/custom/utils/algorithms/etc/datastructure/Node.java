@@ -6,19 +6,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Getter
-public class Node<T> {
+public class Node<E> {
 
-    private final T value;
+    E value;
+    Node<E> next;
 
-    private final List<Node<T>> children;
+    public Node() {
+    }
 
-    public Node(final T value) {
+    public Node(E value) {
         this.value = value;
-        this.children = new ArrayList<>();
+        next = null;
     }
 
-    public void addChild(Node<T> node) {
-        children.add(node);
+    public String toString() {
+        return "value:" + value;
     }
-
 }

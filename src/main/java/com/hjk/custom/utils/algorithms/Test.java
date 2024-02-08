@@ -7,7 +7,10 @@ import java.util.List;
 public class Test {
 
     public static void main (String... args) {
-        t2();
+        var res = hanoi(3,1,3);
+        for(var r : res) {
+            System.out.println(Arrays.toString(r));
+        }
     }
 
     public static String t1(String s) {
