@@ -5,15 +5,15 @@ import lombok.Getter;
 
 import java.util.*;
 
-public class BreadthFirstSearch<T> {
+public class BreadthFirstSearch<E> {
 
-    private final List<Node<T>> visited = new ArrayList<>();
+    private final List<Node<E>> visited = new ArrayList<>();
 
     public static void main(String... args) {
 
     }
 
-    public Optional<Node<T>> search(Node<T> node, T value) {
+    public Optional<Node<E>> search(Node<E> node, E value) {
         if(node == null) {
             return Optional.empty();
         }
@@ -22,10 +22,10 @@ public class BreadthFirstSearch<T> {
             return Optional.of(node);
         }
 
-        Queue<Node<T>> queue = new ArrayDeque<>(node.getChildren());
+        Queue<Node<E>> queue = new ArrayDeque<>(node.getChildren());
 
         while(!queue.isEmpty()) {
-            final Node<T> current = queue.poll();
+            final Node<E> current = queue.poll();
 
             if(current.getValue().equals(value)) {
                 return Optional.of(current);

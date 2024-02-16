@@ -1,49 +1,448 @@
-package com.hjk.custom.utils.algorithms.levelone;
-
-import lombok.Setter;
+package com.hjk.custom.utils.algorithms.programmers;
 
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.function.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
+
+import static com.hjk.custom.utils.algorithms.programmers.Utils.*;
 
 public class One<T> {
 
     public static void main(String... args) {
         var one = new One();
-//        one.t34(new String[]{"mislav", "stanko", "mislav", "ana"}, new String[]{"stanko", "ana", "mislav"});
-//        one.t35(new int[]{1, 5, 2, 6, 3, 7, 4}, new int[][]{{2, 5, 3}, {4, 4, 1}, {1, 7, 3}});
-//        one.t37(5, new int[]{4, 2}, new int[]{3, 5});
-
-        time1();
+        one.t68(3,20,4);
     }
 
-    //달리기 경주
+    // 부족한 금액 계산하기
+//    price	money	count	result
+//3	20	4	10
+    public long t68(int price, int money, int count) {
+        long answer = -1;
+        long total = 0;
+        for(int i = 1; i <= count; i++) {
+            var next = price * i;
+            total += next;
+        }
+        return money > total ? 0 : total - money;
+    }
+
+    //3진법 뒤집기
+//    n	result
+//45	7
+// 125	229
+    public int t67(int n) {
+        int answer = 0;
+        var str = new StringBuilder();
+        while(n != 0) {
+            str.append(n % 3);
+            n = n / 3;
+        }
+        for(int i = str.toString().length() - 1, j = 0; i >= 0 && j  < str.toString().length(); i--, j++) {
+            int num =  str.toString().charAt(j) - '0';
+            answer += (int) (Math.pow(3, i) * num);
+        }
+        return answer;
+    }
+
+    //숫자 짝궁
+//    X	Y	result
+//"100"	"2345"	"-1"
+// "100"	"203045"	"0"
+// "100"	"123450"	"10"
+// "12321"	"42531"	"321"
+// "5525"	"1255"	"552"
+    public String t66(String X, String Y) {
+        String answer = "";
+        Map<String, Integer> map1 = new HashMap<>();
+        Map<String, Integer> map2 = new HashMap<>();
+        for (var val : X.split("")) {
+            map1.put(val, map1.getOrDefault(val, 0) + 1);
+        }
+        for (var val : Y.split("")) {
+            map2.put(val, map2.getOrDefault(val, 0) + 1);
+        }
+        print(map1, map2);
+        for (int i = 0; i <= 9; i++) {
+            var val1 = map1.getOrDefault(String.valueOf(i), 0);
+            var val2 = map2.getOrDefault(String.valueOf(i), 0);
+            if (val1 > 0 && val2 > 0 && val1.compareTo(val2) > 0) {
+                answer += String.valueOf(i).repeat(val2);
+            } else if (val1 > 0 && val2 > 0 && val1.compareTo(val2) <= 0) {
+                answer += String.valueOf(i).repeat(val1);
+            }
+        }
+        if (answer.isEmpty()) {
+            return "-1";
+        }
+        var res = Arrays.stream(answer.split("")).sorted((v1, v2) -> v2.compareTo(v1)).collect(Collectors.joining(""));
+        while (res.length() != 1 && res.charAt(0) == '0') {
+            res = res.replaceFirst("0", "");
+        }
+        return res;
+    }
+
+    //햄버거 만들기
+//    ingredient	result
+//[2, 1, 1, 2, 3, 1, 2, 3, 1]	2
+//        [1, 3, 2, 1, 2, 1, 3, 1, 2]	0
+    public int t65(int[] ingredient) {
+        int answer = 0;
+        Stack<String> stack = new Stack<>();
+        for (var val : ingredient) {
+            stack.push(String.valueOf(val));
+            if (stack.size() >= 4 && stack.peek().equals("1")) {
+                var check = new StringBuilder();
+                for (int i = 0; i < 4; i++) {
+                    check.append(stack.pop());
+                }
+                if (check.toString().equals("1321")) {
+                    answer++;
+                } else {
+                    for (var prev : check.reverse().toString().split("")) {
+                        stack.push(prev);
+                    }
+                }
+            }
+        }
+        return answer;
+    }
+
+    //기사단원 무기
+//    5	3	2	10
+//            10	3	2	21
+    public int t64(int number, int limit, int power) {
+        int answer = 0;
+        int[] arr = new int[number];
+        for (int i = 1; i <= number; i++) {
+            Map<Integer, Integer> map = new HashMap<>();
+            int num = i;
+            int divide = 2;
+            while (num != 1) {
+                if (num % divide == 0) {
+                    map.put(divide, map.getOrDefault(divide, 0) + 1);
+                    num /= divide;
+                } else {
+                    divide++;
+                }
+            }
+            int sum = 1;
+            for (var entry : map.entrySet()) {
+                sum *= entry.getValue() + 1;
+            }
+            arr[i - 1] = sum;
+        }
+        for (var val : arr) {
+            if (val > limit) {
+                answer += power;
+            } else {
+                answer += val;
+            }
+        }
+        return answer;
+    }
+
+    //명예의 전당
+//    k	score	result
+//3	[10, 100, 20, 150, 1, 100, 200]	[10, 10, 10, 20, 20, 100, 100]
+//        4	[0, 300, 40, 300, 20, 70, 150, 50, 500, 1000]	[0, 0, 0, 0, 20, 40, 70, 70, 150, 300]
+    public int[] t63(int k, int[] score) {
+        int[] answer = new int[score.length];
+        int index = 0;
+        PriorityQueue<Integer> queue = new PriorityQueue<>((v1, v2) -> v1 - v2);
+        for (var s : score) {
+            if (queue.size() == k && queue.peek() < s) {
+                queue.poll();
+                queue.add(s);
+            } else if (queue.size() == k && queue.peek() >= s) {
+
+            } else {
+                queue.add(s);
+            }
+            answer[index] = queue.peek();
+            index++;
+        }
+        print(answer);
+        return answer;
+    }
+
+    //문자열 나누기
+//    s	result
+//"banana"3
+//  "abracadabra"6
+//  "aaabbaccccabba"3
+    public int t62(String s) {
+        int answer = 0;
+
+        while (!s.isEmpty()) {
+            var first = s.charAt(0);
+            var same = 1;
+            var other = 0;
+            for (int i = 1; i < s.length(); i++) {
+                if (first == s.charAt(i)) {
+                    same++;
+                } else {
+                    other++;
+                }
+                if (same == other) {
+                    s = s.substring(i + 1);
+                    answer++;
+                    break;
+                }
+            }
+            if (same != other) {
+                answer++;
+                break;
+            }
+        }
+        return answer;
+    }
+
+    //가장 가까운 글자
+//    s	result
+//"banana"	[-1, -1, -1, 2, 2, 2]
+//        "foobar"	[-1, -1, 1, -1, -1, -1]
+    public int[] t61(String s) {
+        int[] answer = new int[s.length()];
+        int index = 0;
+        Map<String, Integer> map = new HashMap<>();
+        for (var str : s.split("")) {
+            var val = map.getOrDefault(str, -1);
+            if (val == -1) {
+                answer[index] = -1;
+            } else {
+                answer[index] = index - val;
+            }
+            map.put(str, index);
+            index++;
+        }
+        return answer;
+    }
+
+    //크기가 작은 부분 문자열
+//    t	p	result
+//"3141592"	"271"	2
+// "500220839878"	"7"	8
+// "10203"	"15"	3
+    public int t60(String t, String p) {
+        int answer = 0;
+        int index = 0;
+        int size = p.length();
+        int length = t.length();
+        while (index + size <= length) {
+            var str = t.substring(index, index + size);
+            index += 1;
+            if (Long.parseLong(str) <= Long.parseLong(p)) {
+                print(str);
+                answer += 1;
+            }
+        }
+        return answer;
+    }
+
+    //둘만의 암호
+//    s	skip	index	result
+//"aukks"	"wbqd"	5	"happy"
+    public String t59(String s, String skip, int index) {
+        StringBuilder answer = new StringBuilder();
+        String dic = "abcdefghijklmnopqrstuvwxyz";
+        for (var str : skip.split("")) {
+            dic = dic.replace(str, "");
+        }
+        for (var word : s.split("")) {
+            var toIndex = dic.indexOf(word) + index >= dic.length()
+                    ? (dic.indexOf(word) + index) % dic.length()
+                    : dic.indexOf(word) + index;
+            answer.append(dic.split("")[toIndex]);
+        }
+        return answer.toString();
+    }
+
+    // 카드뭉치(해결)
+//    cards1	cards2	goal	result
+//["i", "drink", "water"]	["want", "to"]	["i", "want", "to", "drink", "water"]	"Yes"
+//    ["i", "water", "drink"]	["want", "to"]	["i", "want", "to", "drink", "water"]	"No"
+    public String t58(String[] cards1, String[] cards2, String[] goals) {
+        String answer = "";
+        Queue<String> card1 = new LinkedList<>(Arrays.asList(cards1));
+        Queue<String> card2 = new LinkedList<>(Arrays.asList(cards2));
+        Queue<String> goal = new LinkedList<>(Arrays.asList(goals));
+
+        while (!goal.isEmpty()) {
+            var word = goal.poll();
+            var check = false;
+            if (!card1.isEmpty() && card1.peek().equals(word)) {
+                card1.poll();
+                check = true;
+            }
+            if (!card2.isEmpty() && card2.peek().equals(word)) {
+                card2.poll();
+                check = true;
+            }
+            if (!check) return "No";
+        }
+        return "Yes";
+    }
+
+    //대충만든 자판(해결)
+//    keymap	targets	result
+//["ABACD", "BCEFD"]	["ABCD","AABB"]	[9, 4]
+//["AA"]	["B"]	[-1]
+//["AGZ", "BSSS"]	["ASA","BGZ"]	[4, 6]
+    public int[] t57(String[] keymap, String[] targets) {
+        int[] answer = new int[targets.length];
+        int num = 0;
+        for (var s : targets) {
+            int sum = 0;
+            for (int i = 0; i < s.length(); i++) {
+                var target = s.charAt(i);
+                var index = 102;
+                for (var key : keymap) {
+                    for (int j = 0; j < key.length(); j++) {
+                        if (target == key.charAt(j) && j + 1 < index) {
+                            index = j + 1;
+                        }
+                    }
+                }
+                if (index == 102) {
+                    sum = -1;
+                    break;
+                } else {
+                    sum += index;
+                }
+            }
+            answer[num] = sum;
+            num++;
+        }
+        return answer;
+    }
+
+    //덧칠하기 (해결)
+//    8	4	[2, 3, 6]	2
+//    5	4	[1, 3]	1
+//    4	1	[1, 2, 3, 4]	4
+    public int t56(int n, int m, int[] section) {
+        int answer = 0;
+        int to = 0;
+        for (int i = 0; i < section.length; i++) {
+            if (to < section[i]) {
+                to = section[i] + m - 1;
+                answer++;
+            }
+        }
+        return answer;
+    }
+
+    //공원 산책 (해결)
+//    park	routes	result
+//["SOO","OOO","OOO"]	["E 2","S 2","W 1"]	[2,1]
+// ["SOO","OXX","OOO"]	["E 2","S 2","W 1"]	[0,1]
+// ["OSO","OOO","OXO","OOO"]	["E 2","S 3","W 1"]	[0,0]
+    public int[] t55(String[] park, String[] routes) {
+        int[] answer = new int[2];
+        int currentX = 0, currentY = 0;
+        int brickX = park[0].toCharArray().length - 1, brickY = park.length - 1;
+        for (int i = 0; i < park.length; i++) {
+            var p = park[i].toCharArray();
+            for (int j = 0; j < p.length; j++) {
+                if (p[j] == 'S') {
+                    currentY = i;
+                    currentX = j;
+                }
+            }
+        }
+
+        for (var route : routes) {
+            var direction = route.split(" ")[0];
+            var distance = route.split(" ")[1];
+            var prevY = currentY;
+            var prevX = currentX;
+            switch (direction) {
+                case "N" -> currentY -= Integer.parseInt(distance);
+                case "S" -> currentY += Integer.parseInt(distance);
+                case "W" -> currentX -= Integer.parseInt(distance);
+                case "E" -> currentX += Integer.parseInt(distance);
+            }
+            if (currentY > brickY || currentY < 0 || currentX > brickX || currentX < 0) {
+                currentY = prevY;
+                currentX = prevX;
+                continue;
+            }
+            if (direction.equals("S") || direction.equals("N")) {
+                for (int i = Math.min(prevY, currentY); i <= Math.max(prevY, currentY); i++) {
+                    var p = park[i];
+                    var check = p.toCharArray()[currentX];
+                    if (check == 'X') {
+                        currentY = prevY;
+                    }
+                }
+            } else {
+                for (int i = Math.min(prevX, currentX); i <= Math.max(prevX, currentX); i++) {
+                    var p = park[currentY];
+                    var check = p.toCharArray()[i];
+                    if (check == 'X') {
+                        currentX = prevX;
+                    }
+                }
+            }
+            print(currentY, currentX);
+        }
+        print(currentY, currentX);
+        answer[0] = currentY;
+        answer[1] = currentX;
+        return answer;
+    }
+
+    // 추억 점수 (해결)
+//    name	yearning	photo	result
+//["may", "kein", "kain", "radi"]	[5, 10, 1, 3]	[["may", "kein", "kain", "radi"],["may", "kein", "brin", "deny"], ["kon", "kain", "may", "coni"]]	[19, 15, 6]
+    public int[] t54(String[] name, int[] yearning, String[][] photo) {
+        int[] answer = new int[photo.length];
+        Map<String, Integer> map = new HashMap<>();
+        for (int i = 0; i < name.length; i++) {
+            map.put(name[i], yearning[i]);
+        }
+        int index = 0;
+        for (var p : photo) {
+            int sum = 0;
+            for (var val : p) {
+                sum += map.getOrDefault(val, 0);
+            }
+            answer[index] = sum;
+            index++;
+        }
+        return answer;
+    }
+
+    //달리기 경주 (해결)
     public void t1() {
         String[] players = {"mumu", "soe", "poe", "kai", "mine"};
-        String[] callings = {"kai", "kai", "mine", "mine"};
+        String[] callings = {"kai", "kai", "mine", "mine", "mine", "kai"};
+        Map<String, Integer> cash = new HashMap<>();
 
-        var start = System.nanoTime();
-        IntStream.range(0, callings.length).forEach((index1) -> {
-            var val1 = callings[index1];
-            IntStream.range(0, players.length).forEach((index2) -> {
-                var val2 = players[index2];
-                if (val1.equals(val2)) {
-                    swap(players, index2 - 1, index2);
+        for (var call : callings) {
+            var index = cash.getOrDefault(call, null);
+            if (index != null) {
+                swap(players, index - 1, index);
+                cash.put(call, index - 1);
+                cash.put(players[index], index);
+            } else {
+                for (int j = 0; j < players.length; j++) {
+                    var player = players[j];
+                    if (call.equals(player)) {
+                        swap(players, j - 1, j);
+                        cash.put(call, j - 1);
+                        cash.put(players[j], j);
+                        break;
+                    }
                 }
-            });
-        });
-
-
-        Arrays.stream(players).forEach(System.out::println);
-        var end = System.nanoTime();
-        System.out.println((end - start) / 1000);
+            }
+        }
+        print(players);
     }
 
-    //약수 구하기
+    //약수 구하기 (해결)
     public void t2(int num) {
         int sum = 0;
         for (int i = 1; i <= num; i++) {
@@ -54,7 +453,7 @@ public class One<T> {
         System.out.println(sum);
     }
 
-    //    가운데 글자 가져오기
+    //    가운데 글자 가져오기 (해결)
     public String t3(String s) {
         var size = s.length();
         String answer = String.valueOf(s.charAt(size / 2));
@@ -892,385 +1291,6 @@ public class One<T> {
         return answer;
     }
 
-    public static void stream1() {
-        int[] array = {1, 2, 3, 4, 5, 6};
-        Arrays.stream(array).mapToObj(a -> new int[]{a, a + 1, a + 2})
-                .forEach(System.out::println);
-    }
 
-    public static void stream2() {
-        BiFunction<Integer, Integer, Integer> add = Integer::sum;
-        int res = add.apply(1, 2);
-        System.out.println(res);
-    }
-
-    public static void stream3() {
-        Stream<Integer> numbers = Stream.of(1, 2, 3, 4);
-        numbers.takeWhile(val -> val != 3).forEach(System.out::println);
-    }
-
-    public static void stream4() {
-        Comparator<Integer> integerComparator = Comparator.naturalOrder();
-        BinaryOperator<Integer> max = BinaryOperator.maxBy(integerComparator);
-        var res = max.apply(1, 2);
-        System.out.println(res);
-    }
-
-    public static void stream5() {
-        BiPredicate<Integer, String> predicate = (val1, val2) -> {
-            return val1 == 3 && val2.equals("test");
-        };
-        var res = predicate.test(3, "test");
-        System.out.println(res);
-    }
-
-    public static void stream6() {
-        Stream<String> stream = Stream.of("a", "b", "c");
-        String[] arr = stream.flatMap(val -> Stream.of(val.split(""))).toArray(String[]::new);
-        System.out.println(Arrays.toString(arr));
-    }
-
-    public static void stream7() {
-        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8};
-        var res = IntStream.range(0, 4).boxed().
-                flatMap(val -> {
-                    if (val >= 1) val += val;
-                    return Stream.of(new Integer[][]{{arr[val], arr[val + 1]}});
-                }).
-                toArray(Integer[][]::new);
-        print(res);
-
-        var copy = Arrays.copyOfRange(arr, 1, 4);
-    }
-
-    public static void stream8() {
-        List<Integer> numbers = List.of(1, 2, 3, 4, 5);
-
-        List<Integer> result = numbers.stream()
-                .mapMulti((num, consumer) -> {
-                    consumer.accept(num * num);
-                    consumer.accept((int) Math.sqrt(num));
-                }).mapToInt(i -> (int) i)
-                .boxed().collect(Collectors.toList());
-
-        System.out.println(result);
-    }
-
-    public static void stream9() {
-        Function<Integer, String> converter = String::valueOf;
-        String res = converter.apply(1);
-    }
-
-    public static void stream10() {
-        Stream<Integer> stream = Stream.of(1, 2, 3, 4);
-        stream.peek(System.out::println);
-    }
-
-    //        48 ~ 57 digit 0 ~ 9
-    public static void stream11() {
-        String str = "1a345t0123900aa4";
-        var answer = "";
-        var sum = 0;
-        var arr = str.split("");
-        for (var s : arr) {
-            if (s.codePointAt(0) >= 48 && s.codePointAt(0) <= 57) {
-                answer += s;
-                sum += Integer.parseInt(s);
-            }
-        }
-        print(answer, sum);
-    }
-
-    public static void stream12() {
-        int[] arr1 = {1, 2, 3};
-        Integer[][] arr2 = {{1, 2}, {3, 4}};
-        String[] str = {"test1", "test2"};
-        var res1 = Arrays.stream(arr1).average().getAsDouble();
-        var res2 = Arrays.stream(str).mapMulti((val, consumer) -> {
-            consumer.accept(val.toUpperCase());
-            consumer.accept(val.toLowerCase());
-        }).collect(Collectors.toList());
-
-        Integer[] res3 = Arrays.stream(arr2)
-                .flatMap(Arrays::stream).toArray(Integer[]::new);
-
-        print(res1);
-        print(res2);
-        print(res3);
-    }
-
-    public static void stream13() {
-        //소수찾기
-        int size = 30;
-        IntStream.range(2, size + 1).filter(val -> {
-            for (int i = 2; i <= val; i++) {
-                if (val % i == 0 && val == i) {
-                    return true;
-                } else if (val % i == 0) {
-                    return false;
-                }
-            }
-            return false;
-        }).forEach(System.out::println);
-    }
-
-    public static void stream14() {
-        int size = 10;
-        Random random = new Random();
-        var users = IntStream.range(1, size + 1)
-                .mapToObj(val -> new User(val, "hjk" + val, random.nextInt(10 + 1)))
-                .toList();
-
-        AtomicInteger sum = new AtomicInteger();
-        var map = users.stream()
-                .peek(user -> {
-                    var score = user.getScore();
-                    int rank = 1;
-                    for (var compare : users) {
-                        if (score < compare.getScore()) {
-                            rank += 1;
-                        }
-                    }
-                    sum.addAndGet(user.getScore());
-                    user.setRank(rank);
-                })
-                .collect(Collectors.groupingBy(User::getRank));
-        print(map);
-        print("sum", sum.get());
-        print("avg", sum.get() / (double) size);
-
-        Integer num = 1;
-
-    }
-
-    public static void stream15() {
-        int[] arr = {1, 2, 3, 4};
-        int[] find = {2, 3};
-        int[] filter = {2, 4};
-        int[] filterIndex = {0, 3};
-
-        var index = Arrays.stream(find).map(val -> findIndex(arr, val)).toArray();
-        var filtered = Arrays.stream(arr).filter(val1 -> {
-            for (var val2 : filter) {
-                if (val1 == val2) {
-                    return true;
-                }
-            }
-            return false;
-        }).toArray();
-
-        List<Integer> filteredByIndex = new ArrayList<>();
-        IntStream.range(0, arr.length)
-                .forEach(index1 -> {
-                    for (var index2 : filterIndex) {
-                        if (index1 == index2) {
-                            filteredByIndex.add(arr[index1]);
-                            break;
-                        }
-                    }
-                });
-
-        print(index);
-        print(filtered);
-        print(filteredByIndex);
-    }
-
-    public static <T> List<T> ArrayToList(T[] arr) {
-        return new ArrayList<>(Arrays.stream(arr).collect(Collectors.toList()));
-    }
-
-    public static <Integer> void groupMap(Integer[] arr) {
-        Map<Integer, Long> map = Arrays.stream(arr)
-                .collect(Collectors.groupingBy(val -> val, Collectors.counting()));
-        Map<Integer, List<Integer>> map1 = Arrays.stream(arr)
-                .collect(Collectors.groupingBy(val -> val));
-        print(map);
-    }
-
-
-    public static int[] range(int[] arr, int start, int end) {
-        return Arrays.copyOfRange(arr, start, end);
-    }
-
-    public static <T> T[] range(T[] arr, int start, int end) {
-        return Arrays.copyOfRange(arr, start, end);
-    }
-
-    public static <T> void swap(T[] arr, int index1, int index2) {
-        var temp = arr[index1];
-        arr[index1] = arr[index2];
-        arr[index2] = temp;
-    }
-
-    public static void swap(List<String> list, int index1, int index2) {
-        var temp = list.get(index1);
-        list.set(index1, list.get(index2));
-        list.set(index2, temp);
-    }
-
-    public static void print(int val) {
-        System.out.println(val);
-    }
-
-    public static <T> void print(T val) {
-        System.out.println(val);
-    }
-
-    public static <T> void print(int val1, int val2) {
-        System.out.print(val1 + ",");
-        System.out.print(val2);
-        System.out.println();
-    }
-
-    public static <T> void print(int val1, String val2) {
-        System.out.print(val1 + ",");
-        System.out.print(val2);
-        System.out.println();
-    }
-
-    public static <T> void print(String val1, int val2) {
-        System.out.print(val1 + ",");
-        System.out.print(val2);
-        System.out.println();
-    }
-
-    public static <T> void print(T val1, T val2) {
-        System.out.print(val1 + ",");
-        System.out.print(val2);
-        System.out.println();
-    }
-
-    public static void print(int[] arr) {
-        var joiner = new StringJoiner(",");
-        for (var val : arr) {
-            joiner.add(String.valueOf(val));
-        }
-        System.out.println(joiner.toString());
-    }
-
-    public static void print(String[] arr) {
-        for (var val : arr) {
-            System.out.println(val);
-        }
-    }
-
-    public static <T> void print(T[] arr) {
-        for (var val : arr) {
-            System.out.println(val);
-        }
-    }
-
-    public static <T> void print(T[][] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
-                System.out.print(arr[i][j]);
-            }
-            System.out.println();
-        }
-    }
-
-    public static <T, R> void print(Map<T, R> map) {
-        map.forEach((key, value) -> {
-            System.out.println(key + ":" + value);
-        });
-    }
-
-    public static void consumer() {
-        Consumer<String> print1 = System.out::println;
-        Consumer<String> print2 = (val) -> {
-            System.out.println("val2");
-        };
-        print1.andThen(print2).accept("val1");
-    }
-
-    public static int findIndex(int[] arr, int find) {
-        int index = 0;
-        for (var val : arr) {
-            if (val == find) {
-                return index;
-            } else {
-                index += 1;
-            }
-        }
-        return -1;
-    }
-
-
-
-    public static void time1() {
-        long start = System.currentTimeMillis();
-
-
-        stream15();
-
-
-        long end = System.currentTimeMillis();
-        long duration = end - start;
-        System.out.println("Execution time: " + duration + "ms");
-    }
-
-
-    public static class User {
-        int age;
-        String name;
-
-        int score;
-
-        @Setter
-        int rank;
-
-        public User() {
-
-        }
-
-        public User(int age, String name, int score, int rank) {
-            this.age = age;
-            this.name = name;
-            this.score = score;
-            this.rank = rank;
-        }
-
-        public User(int age, String name, int score) {
-            this.age = age;
-            this.name = name;
-            this.score = score;
-        }
-
-        public User age(int age) {
-            this.age = age;
-            return this;
-        }
-
-        public int getAge() {
-            return age;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public int getScore() {
-            return score;
-        }
-
-        public int getRank() {
-            return rank;
-        }
-
-        public User name(String name) {
-            this.name = name;
-            return this;
-        }
-
-        public static User builder() {
-            return new User();
-        }
-
-        @Override
-        public String toString() {
-            return this.name + "," + this.age + "," + this.score;
-        }
-
-    }
 }
 
