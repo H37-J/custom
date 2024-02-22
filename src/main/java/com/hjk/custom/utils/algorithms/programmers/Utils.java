@@ -77,6 +77,14 @@ public class Utils {
         System.out.println();
     }
 
+    public static <T> void print(T val1, T val2, T val3, T val4) {
+        System.out.print(val1 + ",");
+        System.out.print(val2 + ",");
+        System.out.print(val3 + ",");
+        System.out.print(val4);
+        System.out.println();
+    }
+
     public static void print(int[] arr) {
         var joiner = new StringJoiner(",");
         for (var val : arr) {
@@ -102,6 +110,10 @@ public class Utils {
     }
 
     public static void print(char[] arr) {
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public static void print(boolean[] arr) {
         System.out.println(Arrays.toString(arr));
     }
 
@@ -152,7 +164,14 @@ public class Utils {
         return -1;
     }
 
-
+    public static int[] getRandom(int size, int range) {
+        Random random = new Random();
+        var arr = new int[size];
+        for(int i = 0; i < size; i++) {
+            arr[i] = random.nextInt(range + 1);
+        }
+        return arr;
+    }
 
     public static void time1() {
         long start = System.currentTimeMillis();
@@ -160,6 +179,19 @@ public class Utils {
         long end = System.currentTimeMillis();
         long duration = end - start;
         System.out.println("Execution time: " + duration + "ms");
+    }
+
+    public static void test() {
+        int size = 100000000;
+        var arr = new int[size];
+        List<Integer> list = new ArrayList<>();
+        for(int i = 0; i < size; i++) {
+            arr[i] = i;
+        }
+        int num = 0;
+        for(int i = 0; i < size; i++) {
+            num = arr[i];
+        }
     }
 
 }
