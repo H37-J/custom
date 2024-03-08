@@ -85,12 +85,34 @@ public class Utils {
         System.out.println();
     }
 
+    public static<T> void print(List<T> list) {
+        var joiner = new StringJoiner(",");
+        for(var val : list) {
+            joiner.add(String.valueOf(val));
+        }
+        System.out.println(joiner.toString());
+    }
+
     public static void print(int[] arr) {
         var joiner = new StringJoiner(",");
         for (var val : arr) {
             joiner.add(String.valueOf(val));
         }
         System.out.println(joiner.toString());
+    }
+
+    public static<T> void print(T[][] arr) {
+        System.out.println(Arrays.deepToString(arr));
+    }
+
+    public static void print(boolean[][] arr) {
+        System.out.println(Arrays.deepToString(arr));
+    }
+    public static void print(int[][] arr) {
+        System.out.println(Arrays.deepToString(arr));
+    }
+    public static void print(Integer[][] arr) {
+        System.out.println(Arrays.deepToString(arr));
     }
 
     public static void print(String[] arr) {
@@ -129,15 +151,6 @@ public class Utils {
         System.out.println(joiner.toString());
     }
 
-    public static <T> void print(T[][] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
-                System.out.print(arr[i][j]);
-            }
-            System.out.println();
-        }
-    }
-
     public static <T, R> void print(Map<T, R> map) {
         map.forEach((key, value) -> {
             System.out.println(key + ":" + value);
@@ -173,25 +186,5 @@ public class Utils {
         return arr;
     }
 
-    public static void time1() {
-        long start = System.currentTimeMillis();
-
-        long end = System.currentTimeMillis();
-        long duration = end - start;
-        System.out.println("Execution time: " + duration + "ms");
-    }
-
-    public static void test() {
-        int size = 100000000;
-        var arr = new int[size];
-        List<Integer> list = new ArrayList<>();
-        for(int i = 0; i < size; i++) {
-            arr[i] = i;
-        }
-        int num = 0;
-        for(int i = 0; i < size; i++) {
-            num = arr[i];
-        }
-    }
 
 }
