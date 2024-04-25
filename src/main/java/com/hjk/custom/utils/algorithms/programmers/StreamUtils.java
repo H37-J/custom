@@ -15,11 +15,14 @@ import java.util.stream.Stream;
 import static com.hjk.custom.utils.algorithms.programmers.Utils.*;
 public class StreamUtils {
 
+    public static void main(String... args) {
+        stream7();
+    }
 
     public static void stream1() {
         int[] array = {1, 2, 3, 4, 5, 6};
         Arrays.stream(array).mapToObj(a -> new int[]{a, a + 1, a + 2})
-                .forEach(System.out::println);
+                .forEach(val -> System.out.println(val));
     }
 
     public static void stream2() {

@@ -8,6 +8,9 @@ import static com.hjk.custom.utils.algorithms.programmers.Utils.*;
 
 public class Two {
 
+    private Map<Integer, Long> map = new HashMap<>();
+    private Set<Integer> set = new HashSet<>();
+    private Integer min = Integer.MAX_VALUE;
     private Long answer = 0L;
     private int call = 0;
     private int total = 0;
@@ -16,17 +19,23 @@ public class Two {
         var two = new Two();
         long startTime = System.currentTimeMillis();
 
-//        two.solution26(new int[]{1, 3, 2}, new String[]{"diamond", "diamond", "diamond", "iron", "iron", "diamond", "iron", "stone"});
 //        two.solution27(new String[][]{{"02:40", "04:10"},{"01:44", "02:20"},{"00:00","00:30"}, {"00:40","01:40"}, {"01:40", "02:20"}, {"01:50", "02:20"}, {"02:30", "02:40"}});
 //        two.solution29(new int[]{9,1,5,3,6,2});
 
-        two.solution38(new int[][]{{1, 0,1,1,1}, {1,0,1,0,1}, {1,0,1,1,1}, {1,1,1,0,0}, {0,0,0,0,1}});
+        int[] arr = new int[1000000];
+        Random random = new Random();
+        for(int i = 0; i < arr.length; i ++) {
+            arr[i] = random.nextInt(100000);
+        }
+
+        two.solution29(arr);
+
         long endTime = System.currentTimeMillis();
         long duration = endTime - startTime;
         System.out.println("Execution time: " + duration + "ms");
     }
 
-    //게임 맵 최단거리
+    //게임 맵 최단거리(미해결, 시간초과)
     // maps	answer
     // [[1,0,1,1,1],[1,0,1,0,1],[1,0,1,1,1],[1,1,1,0,1],[0,0,0,0,1]]	11
     // [[1,1], [1,1]]'/
@@ -50,8 +59,8 @@ public class Two {
 
     public void recursive(int[][] maps, int x, int y, int n, int m, List<List<Integer>> list, Boolean[][] visited, AtomicInteger answer, int sum) {
         if (x + 1 == n && y + 1 == m) {
-            if(answer.get() > sum) {
-                answer.getAndSet(sum + 1 );
+            if (answer.get() > sum) {
+                answer.getAndSet(sum + 1);
             }
             return;
         }
@@ -92,7 +101,7 @@ public class Two {
     }
 
 
-    //피로도
+    //피로도(해결)
     // k	dungeons	result
     //80	[[80,20],[50,40],[30,10]]	3
     public int solution37(int k, int[][] dungeons) {
@@ -136,7 +145,7 @@ public class Two {
         }
     }
 
-    //혼자 놀기의 달인
+    //혼자 놀기의 달인(미해결)
     //cards	result
     //[8,6,3,7,2,5,1,4]	12
     public int solution36(int[] cards) {
@@ -192,7 +201,7 @@ public class Two {
     }
 
 
-    //택배 상자
+    //택배 상자(해결)
     //order	result
     //[4, 3, 1, 2, 5]	2
     //[5, 4, 3, 2, 1]	5
@@ -222,7 +231,7 @@ public class Two {
         return answer;
     }
 
-    //귤 고르기
+    //귤 고르기(해결)
     //  k	tangerine	result
     // 6	[1, 3, 2, 5, 4, 5, 2, 3]	3
     // 4	[1, 3, 2, 5, 4, 5, 2, 3]	2
@@ -248,7 +257,7 @@ public class Two {
         return answer;
     }
 
-    //디펜스 게임
+    //디펜스 게임(해결)
     //n	k	enemy	result
     // 7	3	[4, 2, 4, 5, 3, 3, 1]	5
     // 2	4	[3, 3, 3, 3]	4
@@ -274,7 +283,7 @@ public class Two {
         return answer;
     }
 
-    //마법의 엘리베이터
+    //마법의 엘리베이터(미해결)
     //storey	result
     //16	6
     // 2554	16
@@ -319,7 +328,7 @@ public class Two {
         return count == 0 ? -1 : count;
     }
 
-    //숫자 변환하기
+    //숫자 변환하기(해결)
     //x	y	n	result
     //10	40	5	2
     //10	40	30	1
@@ -358,28 +367,68 @@ public class Two {
         }
     }
 
-    //뒤에있는 큰 수 찾기
+    //뒤에있는 큰 수 찾기(해결)
     //numbers	result
     //[2, 3, 3, 5]	[3, 5, 5, -1]
-    //[9, 1, 5, 3, 6, 2]	[-1, 5, 6, 6, -1, -1]
+    //[9, 1, 5, 2,1,1,5, 6, 2]	[-1, 5, 6, 6, -1, -1]
     public int[] solution29(int[] numbers) {
-        int[] answer = new int[numbers.length];
-        for (int i = 0; i < numbers.length; i++) {
+        CustomArray[] answer = new CustomArray[numbers.length];
+        answer[numbers.length - 1] = new CustomArray(-1);
+        for (int i = numbers.length - 2; i >= 0; i--) {
             var target = numbers[i];
-            for (int j = i + 1; j < numbers.length; j++) {
-                var compare = numbers[j];
-                if (target < compare) {
-                    answer[i] = compare;
-                    break;
+            var compare = numbers[i + 1];
+            if (compare == -1) {
+                answer[i] = new CustomArray(-1);
+            } else if (target < compare) {
+                answer[i] = new CustomArray(compare, i + 1);
+            } else {
+                compare = answer[i + 1].getValue();
+                var index = answer[i + 1].getIndex();
+                if (compare == -1) answer[i] = new CustomArray(compare, index);
+                while (true) {
+                    if (target < compare) {
+                        answer[i] = new CustomArray(compare, index);
+                        break;
+                    } else if (compare == -1) {
+                        answer[i] = new CustomArray(-1);
+                        break;
+                    } else {
+                        compare = answer[index].getValue();
+                        index = answer[index].getIndex();
+                    }
                 }
             }
-            if (answer[i] == 0) answer[i] = -1;
         }
-        print(answer);
-        return answer;
+        return Arrays.stream(answer).map(CustomArray::getValue).mapToInt(i -> i).toArray();
     }
 
-    //무인도 여행
+    public static class CustomArray {
+        int value;
+        int index;
+
+        public CustomArray(int value) {
+            this.value = value;
+        }
+
+        public CustomArray(int value, int index) {
+            this.value = value;
+            this.index = index;
+        }
+
+        public int getValue() {
+            return value;
+        }
+
+        public int getIndex() {
+            return index;
+        }
+
+        public String toString() {
+            return this.index + ": " + this.value;
+        }
+    }
+
+    //무인도 여행(해결)
     //maps	result
     //["X591X","X1X5X","X231X", "1XXX1"]	[1, 1, 27]
     //["XXX","XXX","XXX"]	[-1]
@@ -452,11 +501,9 @@ public class Two {
                     j = j - 1;
                 }
             }
-            print(sets);
             times.remove(0);
             answer++;
         }
-        print(answer);
         return answer;
     }
 
@@ -486,106 +533,66 @@ public class Two {
         }
     }
 
-    //광물캐기(미해결)
+    //광물캐기(해결)
     //picks	minerals	result
     //[1, 3, 2]	["diamond", "diamond", "diamond", "iron", "iron", "diamond", "iron", "stone"]	12
     //[0, 1, 1]	["diamond", "diamond", "diamond", "diamond", "diamond", "iron", "iron", "iron", "iron", "iron", "diamond"]	50
     public int solution26(int[] picks, String[] minerals) {
         int answer = 0;
-        Queue<String> queue = new LinkedList<>(Arrays.asList(minerals));
-
-
+        permutation(picks, minerals, 0);
         return answer;
     }
 
-    public int permutation(int[] picks, Queue<String> queue, int tired) {
-        if (queue.isEmpty()) {
-            return -1;
+    public void permutation(int[] picks, String[] minerals, int sum) {
+        if (minerals.length == 0 || Arrays.stream(picks).sum() == 0) {
+            if (min > sum) {
+                min = sum;
+            }
         }
 
         for (int i = 0; i < picks.length; i++) {
             if (picks[i] == 0) continue;
-            Queue<String> temp = new LinkedList<>(queue);
-            var original = picks[i];
-            var originalTired = tired;
-            picks[i] = picks[i] - 1;
-            var count = 5;
-            while (!queue.isEmpty() && count != 0) {
+            var original = sum;
+            for (int j = 0; j < 5; j++) {
+                if (j == minerals.length) break;
                 if (i == 0) {
-                    tired++;
-                } else if (i == 1) {
-                    if (queue.peek().equals("diamond")) {
-                        tired += 5;
-                    } else {
-                        tired++;
-                    }
-                } else if (i == 2) {
-                    if (queue.peek().equals("diamond")) {
-                        tired += 25;
-                    } else if (queue.peek().equals("iron")) {
-                        tired += 5;
-                    } else {
-                        tired++;
-                    }
+                    sum += 1;
+                } else if (i == 1 && minerals[j].equals("diamond") || i == 2 && minerals[j].equals("iron")) {
+                    sum += 5;
+                } else if (i == 2 && minerals[j].equals("diamond")) {
+                    sum += 25;
+                } else {
+                    sum += 1;
                 }
-                queue.poll();
-                count--;
             }
-            if (!queue.isEmpty() && picks[i] != 0) {
-                i = i - 1;
-                print(i);
-                continue;
-            }
-            permutation(picks, queue, tired);
-            if (queue.isEmpty()) {
-                print(tired);
-                print(picks);
-            }
-            picks[i] = original;
-            tired = originalTired;
-            queue.clear();
-            queue.addAll(temp);
+            var next = Arrays.stream(minerals).skip(5).toArray(String[]::new);
+            picks[i] = picks[i] - 1;
+            permutation(picks, next, sum);
+            picks[i] = picks[i] + 1;
+            sum = original;
         }
-        return tired;
     }
 
-    //멀리 뛰기(미해결)
+    //멀리 뛰기(해결)
     // n	result
     //4	5
     //3	3
     public long solution25(int n) {
-//        AAAA BAA ABA AAB BB AAAA
-//                AAAAA BBA ABB BAB
-        String str = "AAAAA";
-        var set = new HashSet<String>();
-        print(set);
-        return answer;
+        var res = fibo(n) % 1234567;
+        print(res);
+        print(map);
+        return res;
     }
 
-    public void permutation(String str, int count, Set<String> set, String find, boolean[] visited, int start) {
-
+    public long fibo(int n) {
+        if (map.get(n) != null) return map.get(n) % 1234567;
+        if (n == 0 || n == 1) return 1;
+        else map.put(n, fibo(n - 1) + fibo(n - 2));
+        return fibo(n - 1) + fibo(n - 2);
     }
 
-    public void permutation(int sum, List<Integer> list) {
-        if (total > sum) {
-            return;
-        }
-        if (total == sum) {
-            answer++;
-            print(list);
-            return;
-        }
 
-        for (int i = 2; i >= 1; i--) {
-            total += i;
-            list.add(i);
-            permutation(sum, list);
-            total -= i;
-            list.remove(list.size() - 1);
-        }
-    }
-
-    //숫자의 표현
+    //숫자의 표현(해결)
     // n	result
     //15	4
     public int solution24(int n) {
@@ -618,9 +625,7 @@ public class Two {
             int num = getFactorial(--n);
             var temp = (int) Math.ceil((double) k / num);
             k = (long) Math.floor((double) k % num);
-            print(temp, k, num);
         }
-        print(str);
         return answer;
     }
 
@@ -629,44 +634,38 @@ public class Two {
         return n * getFactorial(n - 1);
     }
 
-    //줄 서는 방법(미해결)
+    //줄 서는 방법(해결)
     //n	k	result
     //3	5	[3,1,2]
     public int[] solution22(int n, long k) {
-        int[] arr = new int[n];
-        boolean[] visited = new boolean[n];
-        var list = new ArrayList<Integer>();
-        var res = new ArrayList<List<Integer>>();
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = i + 1;
+        Map<Integer, Long> map = new HashMap<>();
+        List<Integer> list = new ArrayList<>();
+        int[] answer = new int[n];
+        var count = 0;
+        Long num = 1L;
+        for (int i = 1; i <= n; i++) {
+            num *= i;
+            map.put(i, num);
+            list.add(i);
         }
-        permutation(arr, visited, list, res, n, (int) k);
-        var result = res.get((int) k - 1);
-        print(result);
-        return result.stream().mapToInt(i -> i).toArray();
+        while (n-- != 1) {
+            var fac = map.get(n);
+            var index = k % fac == 0 ? k / fac : (k / fac) + 1;
+            answer[count] = list.get((int) index - 1);
+            list.remove((int) index - 1);
+            k = k % fac == 0 ? fac : k % fac;
+            count++;
+        }
+        answer[count] = list.get(n);
+        return answer;
     }
 
     public void permutation(int[] arr, boolean[] visited, List<Integer> list, List<List<Integer>> res, int n, int k) {
-        if (list.size() == n) {
-            res.add(new ArrayList<>(list));
-            print(res);
-            return;
-        }
 
-        for (int i = 0; i < arr.length; i++) {
-            if (visited[i]) continue;
-            ;
-            visited[i] = true;
-            list.add(arr[i]);
-            permutation(arr, visited, list, res, n, k);
-            if (res.size() == k) return;
-            visited[i] = false;
-            list.remove(list.size() - 1);
-        }
     }
 
 
-    //피보나치 수
+    //피보나치 수(해결)
     //n	return
     //3	2
     //5	5
@@ -677,7 +676,7 @@ public class Two {
         return list.get(n);
     }
 
-    //최대값과 최소값
+    //최대값과 최소값(해결)
     //s	return
     // "1 2 3 4"	"1 4"
     // "-1 -2 -3 -4"	"-4 -1"
@@ -698,7 +697,7 @@ public class Two {
         return answer;
     }
 
-    //최소 값 만들기
+    //최소 값 만들기(해결)
     //A	B	answer
     //[1, 4, 2]	[5, 4, 4]	29
     //[1,2]	[3,4]	10
@@ -712,7 +711,7 @@ public class Two {
         return answer;
     }
 
-    //짝지어 제거하기
+    //짝지어 제거하기(해결)
     //s	result
     //baabaa	1
     //cdcd	0
@@ -731,7 +730,7 @@ public class Two {
         return stack.isEmpty() ? 1 : 0;
     }
 
-    //최소 공배수
+    //최소 공배수(해결)
     //arr	result
     //[2,6,8,14]	168
     //[1,2,3]	6
@@ -755,7 +754,7 @@ public class Two {
         return val1 * val2 / num2;
     }
 
-    //다음 큰 숫자
+    //다음 큰 숫자(해결)
     //n	result
     //78	83
     //15	23
@@ -787,7 +786,7 @@ public class Two {
         return current;
     }
 
-    //올바른 괄호
+    //올바른 괄호(해결)
     // s	answer
     //"()()"	true
     //"(())()"	true
@@ -809,7 +808,7 @@ public class Two {
     }
 
 
-    //구명보트
+    //구명보트(해결)
     //people	limit	return
     //[70, 50, 80, 50]	100	3
     //[70, 80, 50]	100	3
@@ -818,19 +817,16 @@ public class Two {
         var arr = Arrays.stream(people).sorted().toArray();
         var start = 0;
         for (int i = arr.length - 1; i >= 0; i--) {
-            print(start, i);
             if (arr[i] + arr[start] <= limit) {
                 start++;
             }
             answer++;
             if (start >= i) break;
         }
-        print(answer);
-
         return answer;
     }
 
-    //큰 수 만들기
+    //큰 수 만들기(해결)
     //number	k	return
     //"1924"	2	"94"
     //"1231234"	3	"3234"
@@ -862,7 +858,7 @@ public class Two {
         return answer.toString();
     }
 
-    //소수 찾기
+    //소수 찾기(해결)
     //numbers	return
     //"17"	3
     //"011"	2
@@ -909,7 +905,7 @@ public class Two {
         return set;
     }
 
-    //전화번호 목록
+    //전화번호 목록(해결)
     //phone_book	return
     //["119", "97674223", "1195524421"]	false
     //["123","456","789"]	true
@@ -936,7 +932,7 @@ public class Two {
         return answer;
     }
 
-    //H-Index
+    //H-Index(해결)
     //citations	return
     //[3, 0, 6, 1, 5]	3
     public int solution10(int[] citations) {
@@ -945,14 +941,13 @@ public class Two {
             var H = i;
             var min = 0;
             var max = 0;
-            for (int j = 0; j < citations.length; j++) {
-                var compare = citations[j];
+            for (int compare : citations) {
                 if (H == compare) {
                     min++;
                     max++;
                 } else if (H > compare) {
                     min++;
-                } else if (H < compare) {
+                } else {
                     max++;
                 }
             }
@@ -964,7 +959,7 @@ public class Two {
     }
 
 
-    //가장 큰 수
+    //가장 큰 수(해결)
     //numbers	return
     //[6, 10, 2]	"6210"
     //[3, 30, 34, 5, 9]	"9534330"
@@ -985,11 +980,10 @@ public class Two {
         while (answer.length() != 1 && answer.charAt(0) == '0' && !answer.replaceFirst("0", "").equals(answer)) {
             answer = answer.replaceFirst("0", "");
         }
-        print(answer);
         return answer;
     }
 
-    // 더 맵게
+    // 더 맵게(해결)
     //scoville	K	return
     //[1, 2, 3, 9, 10, 12]	7	2
     public int solution8(int[] scoville, int K) {
@@ -1008,7 +1002,7 @@ public class Two {
         return queue.peek() < K ? -1 : answer;
     }
 
-    //위장(솔루션2)
+    //위장(솔루션2)(해결)
     public int solution7(String[][] clothes) {
         int answer = 1;
         Map<String, Integer> map = new HashMap<>();
@@ -1021,7 +1015,7 @@ public class Two {
         return answer - 1;
     }
 
-    //위장
+    //위장(해결)
     //clothes	return
     //[["yellow_hat", "headgear"], ["blue_sunglasses", "eyewear"], ["green_turban", "headgear"]]	5
     //[["crow_mask", "face"], ["blue_sunglasses", "face"], ["smoky_makeup", "face"]]	3 //1번 실패
@@ -1060,7 +1054,7 @@ public class Two {
         return sum;
     }
 
-    //기능 개발
+    //기능 개발(해결)
     //progresses	speeds	return
     //[93, 30, 55]	[1, 30, 5]	[2, 1]
     //[95, 90, 99, 99, 80, 99]	[1, 1, 1, 1, 1, 1]	[1, 3, 2]
@@ -1090,7 +1084,7 @@ public class Two {
         return answer;
     }
 
-    //주식가격
+    //주식가격(해결)
     //prices	return
     //[1, 2, 3, 2, 3]	[4, 3, 1, 1, 0]
     public int[] solution4(int[] prices) {
@@ -1113,7 +1107,7 @@ public class Two {
         return answer;
     }
 
-    //프로세스
+    //프로세스(해결)
     // priorities	location	return
     // [2, 1, 3, 2]	2	1
     // [1, 1, 9, 1, 1, 1]	0	5
@@ -1158,7 +1152,7 @@ public class Two {
         }
     }
 
-    // 다리를 지나는 트럭
+    // 다리를 지나는 트럭(해결)
 //    0	[]	[]	[7,4,5,6]
 //            1~2	[]	[7]	[4,5,6]
 //            3	[7]	[4]	[5,6]
@@ -1211,7 +1205,7 @@ public class Two {
         }
     }
 
-    //스킬트리
+    //스킬트리(해결)
     //skill	skill_trees	return
     //"CBD"	["BACDE", "CBADF", "AECB", "BDA"]	2
     public int solution1(String skill, String[] skill_trees) {

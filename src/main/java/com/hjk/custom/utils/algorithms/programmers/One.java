@@ -16,8 +16,8 @@ public class One<T> {
     }
 
     // 부족한 금액 계산하기
-//    price	money	count	result
-//3	20	4	10
+    //price	money	count	result
+    //3	20	4	10
     public long t68(int price, int money, int count) {
         long answer = -1;
         long total = 0;
@@ -551,8 +551,8 @@ public class One<T> {
     }
 
     //    [3,1,2,3]	2
-//    [3,3,3,2,2,4]	3
-//    [3,3,3,2,2,2]	2
+    //    [3,3,3,2,2,4]	3
+    //    [3,3,3,2,2,2]	2
     //폰켓몬
     public void t11() {
         int[] arr = {3, 1, 2, 3};
