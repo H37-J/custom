@@ -1,0 +1,1055 @@
+2025-07-25 11:33:48.005 [restartedMain] [INFO ] [com.hjk.custom.CustomApplication] - Starting CustomApplication using Java 21.0.8 with PID 14072 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\main started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 11:33:48.008 [restartedMain] [DEBUG] [com.hjk.custom.CustomApplication] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 11:33:48.009 [restartedMain] [INFO ] [com.hjk.custom.CustomApplication] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 11:33:48.065 [restartedMain] [INFO ] [o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-25 11:33:48.065 [restartedMain] [INFO ] [o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-25 11:33:49.724 [restartedMain] [INFO ] [o.s.d.r.c.RepositoryConfigurationDelegate] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 11:33:49.726 [restartedMain] [INFO ] [o.s.d.r.c.RepositoryConfigurationDelegate] - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-07-25 11:33:49.750 [restartedMain] [INFO ] [o.s.d.r.c.RepositoryConfigurationDelegate] - Finished Spring Data repository scanning in 16 ms. Found 0 JDBC repository interfaces.
+2025-07-25 11:33:49.763 [restartedMain] [INFO ] [o.s.d.r.c.RepositoryConfigurationDelegate] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 11:33:49.765 [restartedMain] [INFO ] [o.s.d.r.c.RepositoryConfigurationDelegate] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-25 11:33:49.773 [restartedMain] [INFO ] [o.s.d.r.c.RepositoryConfigurationDelegate] - Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2025-07-25 11:33:49.787 [restartedMain] [INFO ] [o.s.d.r.c.RepositoryConfigurationDelegate] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 11:33:49.789 [restartedMain] [INFO ] [o.s.d.r.c.RepositoryConfigurationDelegate] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-25 11:33:49.805 [restartedMain] [INFO ] [o.s.d.r.c.RepositoryConfigurationDelegate] - Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+2025-07-25 11:33:50.651 [restartedMain] [INFO ] [o.s.b.w.e.tomcat.TomcatWebServer] - Tomcat initialized with port 8080 (http)
+2025-07-25 11:33:50.672 [restartedMain] [INFO ] [o.a.catalina.core.StandardService] - Starting service [Tomcat]
+2025-07-25 11:33:50.672 [restartedMain] [INFO ] [o.a.catalina.core.StandardEngine] - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-07-25 11:33:50.818 [restartedMain] [INFO ] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring embedded WebApplicationContext
+2025-07-25 11:33:50.819 [restartedMain] [INFO ] [o.s.b.w.s.c.ServletWebServerApplicationContext] - Root WebApplicationContext: initialization completed in 2753 ms
+2025-07-25 11:33:51.055 [restartedMain] [INFO ] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Starting...
+2025-07-25 11:33:51.204 [restartedMain] [INFO ] [com.zaxxer.hikari.pool.HikariPool] - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4d52192d
+2025-07-25 11:33:51.207 [restartedMain] [INFO ] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Start completed.
+2025-07-25 11:33:51.295 [restartedMain] [INFO ] [o.h.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-25 11:33:51.372 [restartedMain] [INFO ] [org.hibernate.Version] - HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-07-25 11:33:51.421 [restartedMain] [INFO ] [o.h.c.i.RegionFactoryInitiator] - HHH000026: Second-level cache disabled
+2025-07-25 11:33:51.962 [restartedMain] [INFO ] [o.s.o.j.p.SpringPersistenceUnitInfo] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-25 11:33:52.038 [restartedMain] [WARN ] [org.hibernate.orm.deprecation] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-25 11:33:52.061 [restartedMain] [INFO ] [o.hibernate.orm.connections.pooling] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.13
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-25 11:33:52.070 [restartedMain] [DEBUG] [o.h.t.d.sql.spi.DdlTypeRegistry] - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@390a6bf0) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@7eb1ff07)
+2025-07-25 11:33:52.070 [restartedMain] [DEBUG] [o.h.t.d.sql.spi.DdlTypeRegistry] - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@602b2fa0) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@48319421)
+2025-07-25 11:33:52.530 [restartedMain] [INFO ] [o.h.e.t.j.p.i.JtaPlatformInitiator] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-25 11:33:52.537 [restartedMain] [INFO ] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-25 11:33:52.613 [restartedMain] [WARN ] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-25 11:33:53.985 [restartedMain] [INFO ] [o.s.w.s.a.s.AnnotationActionEndpointMapping] - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-07-25 11:33:54.455 [restartedMain] [INFO ] [o.s.b.d.a.OptionalLiveReloadServer] - LiveReload server is running on port 35729
+2025-07-25 11:33:54.462 [restartedMain] [INFO ] [o.s.b.a.e.web.EndpointLinksResolver] - Exposing 1 endpoint beneath base path '/actuator'
+2025-07-25 11:33:54.559 [restartedMain] [INFO ] [o.s.b.w.e.tomcat.TomcatWebServer] - Tomcat started on port 8080 (http) with context path '/'
+2025-07-25 11:33:54.574 [restartedMain] [INFO ] [com.hjk.custom.CustomApplication] - Started CustomApplication in 7.594 seconds (process running for 8.756)
+2025-07-25 11:33:54.582 [restartedMain] [INFO ] [o.s.b.a.b.JobLauncherApplicationRunner] - Running default command line with: []
+2025-07-25 11:33:54.920 [RMI TCP Connection(1)-10.10.20.94] [INFO ] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-25 11:33:54.921 [RMI TCP Connection(1)-10.10.20.94] [INFO ] [o.s.web.servlet.DispatcherServlet] - Initializing Servlet 'dispatcherServlet'
+2025-07-25 11:33:54.924 [RMI TCP Connection(1)-10.10.20.94] [INFO ] [o.s.web.servlet.DispatcherServlet] - Completed initialization in 3 ms
+2025-07-25 11:35:07.989 [SpringApplicationShutdownHook] [INFO ] [o.s.b.w.e.tomcat.GracefulShutdown] - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-25 11:35:07.996 [tomcat-shutdown] [INFO ] [o.s.b.w.e.tomcat.GracefulShutdown] - Graceful shutdown complete
+2025-07-25 11:35:08.188 [SpringApplicationShutdownHook] [INFO ] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-25 11:35:08.193 [SpringApplicationShutdownHook] [INFO ] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown initiated...
+2025-07-25 11:35:08.201 [SpringApplicationShutdownHook] [INFO ] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown completed.
+2025-07-25 11:35:12.737 [restartedMain] [INFO ] [logger{36}] - Starting CustomApplication using Java 21.0.8 with PID 8576 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\main started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 11:35:12.740 [restartedMain] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 11:35:12.741 [restartedMain] [INFO ] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 11:35:12.800 [restartedMain] [INFO ] [logger{36}] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-25 11:35:12.800 [restartedMain] [INFO ] [logger{36}] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-25 11:35:14.713 [restartedMain] [INFO ] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 11:35:14.715 [restartedMain] [INFO ] [logger{36}] - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-07-25 11:35:14.745 [restartedMain] [INFO ] [logger{36}] - Finished Spring Data repository scanning in 19 ms. Found 0 JDBC repository interfaces.
+2025-07-25 11:35:14.761 [restartedMain] [INFO ] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 11:35:14.763 [restartedMain] [INFO ] [logger{36}] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-25 11:35:14.774 [restartedMain] [INFO ] [logger{36}] - Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2025-07-25 11:35:14.790 [restartedMain] [INFO ] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 11:35:14.791 [restartedMain] [INFO ] [logger{36}] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-25 11:35:14.807 [restartedMain] [INFO ] [logger{36}] - Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2025-07-25 11:35:15.649 [restartedMain] [INFO ] [logger{36}] - Tomcat initialized with port 8080 (http)
+2025-07-25 11:35:15.667 [restartedMain] [INFO ] [logger{36}] - Starting service [Tomcat]
+2025-07-25 11:35:15.668 [restartedMain] [INFO ] [logger{36}] - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-07-25 11:35:15.807 [restartedMain] [INFO ] [logger{36}] - Initializing Spring embedded WebApplicationContext
+2025-07-25 11:35:15.807 [restartedMain] [INFO ] [logger{36}] - Root WebApplicationContext: initialization completed in 3006 ms
+2025-07-25 11:35:16.062 [restartedMain] [INFO ] [logger{36}] - HikariPool-1 - Starting...
+2025-07-25 11:35:16.215 [restartedMain] [INFO ] [logger{36}] - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@276612a2
+2025-07-25 11:35:16.217 [restartedMain] [INFO ] [logger{36}] - HikariPool-1 - Start completed.
+2025-07-25 11:35:16.308 [restartedMain] [INFO ] [logger{36}] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-25 11:35:16.389 [restartedMain] [INFO ] [logger{36}] - HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-07-25 11:35:16.437 [restartedMain] [INFO ] [logger{36}] - HHH000026: Second-level cache disabled
+2025-07-25 11:35:16.891 [restartedMain] [INFO ] [logger{36}] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-25 11:35:16.974 [restartedMain] [WARN ] [logger{36}] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-25 11:35:16.999 [restartedMain] [INFO ] [logger{36}] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.13
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-25 11:35:17.007 [restartedMain] [DEBUG] [logger{36}] - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@1936b2a) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@6f313f0b)
+2025-07-25 11:35:17.007 [restartedMain] [DEBUG] [logger{36}] - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@1d663079) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@6b099af2)
+2025-07-25 11:35:17.525 [restartedMain] [INFO ] [logger{36}] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-25 11:35:17.532 [restartedMain] [INFO ] [logger{36}] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-25 11:35:17.595 [restartedMain] [WARN ] [logger{36}] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-25 11:35:18.975 [restartedMain] [INFO ] [logger{36}] - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-07-25 11:35:19.441 [restartedMain] [INFO ] [logger{36}] - LiveReload server is running on port 35729
+2025-07-25 11:35:19.449 [restartedMain] [INFO ] [logger{36}] - Exposing 1 endpoint beneath base path '/actuator'
+2025-07-25 11:35:19.553 [restartedMain] [INFO ] [logger{36}] - Tomcat started on port 8080 (http) with context path '/'
+2025-07-25 11:35:19.570 [restartedMain] [INFO ] [logger{36}] - Started CustomApplication in 7.955 seconds (process running for 9.106)
+2025-07-25 11:35:19.578 [restartedMain] [INFO ] [logger{36}] - Running default command line with: []
+2025-07-25 11:35:19.953 [RMI TCP Connection(1)-10.10.20.94] [INFO ] [logger{36}] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-25 11:35:19.954 [RMI TCP Connection(1)-10.10.20.94] [INFO ] [logger{36}] - Initializing Servlet 'dispatcherServlet'
+2025-07-25 11:35:19.958 [RMI TCP Connection(1)-10.10.20.94] [INFO ] [logger{36}] - Completed initialization in 3 ms
+2025-07-25 11:35:33.684 [SpringApplicationShutdownHook] [INFO ] [logger{36}] - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-25 11:35:33.692 [tomcat-shutdown] [INFO ] [logger{36}] - Graceful shutdown complete
+2025-07-25 11:35:33.718 [SpringApplicationShutdownHook] [INFO ] [logger{36}] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-25 11:35:33.722 [SpringApplicationShutdownHook] [INFO ] [logger{36}] - HikariPool-1 - Shutdown initiated...
+2025-07-25 11:35:33.729 [SpringApplicationShutdownHook] [INFO ] [logger{36}] - HikariPool-1 - Shutdown completed.
+2025-07-25 11:35:37.772 [restartedMain] [INFO ] [logger{21}] - Starting CustomApplication using Java 21.0.8 with PID 7824 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\main started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 11:35:37.775 [restartedMain] [DEBUG] [logger{21}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 11:35:37.775 [restartedMain] [INFO ] [logger{21}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 11:35:37.834 [restartedMain] [INFO ] [logger{21}] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-25 11:35:37.834 [restartedMain] [INFO ] [logger{21}] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-25 11:35:39.506 [restartedMain] [INFO ] [logger{21}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 11:35:39.508 [restartedMain] [INFO ] [logger{21}] - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-07-25 11:35:39.530 [restartedMain] [INFO ] [logger{21}] - Finished Spring Data repository scanning in 14 ms. Found 0 JDBC repository interfaces.
+2025-07-25 11:35:39.542 [restartedMain] [INFO ] [logger{21}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 11:35:39.543 [restartedMain] [INFO ] [logger{21}] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-25 11:35:39.553 [restartedMain] [INFO ] [logger{21}] - Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2025-07-25 11:35:39.568 [restartedMain] [INFO ] [logger{21}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 11:35:39.570 [restartedMain] [INFO ] [logger{21}] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-25 11:35:39.582 [restartedMain] [INFO ] [logger{21}] - Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2025-07-25 11:35:40.359 [restartedMain] [INFO ] [logger{21}] - Tomcat initialized with port 8080 (http)
+2025-07-25 11:35:40.378 [restartedMain] [INFO ] [logger{21}] - Starting service [Tomcat]
+2025-07-25 11:35:40.378 [restartedMain] [INFO ] [logger{21}] - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-07-25 11:35:40.531 [restartedMain] [INFO ] [logger{21}] - Initializing Spring embedded WebApplicationContext
+2025-07-25 11:35:40.531 [restartedMain] [INFO ] [logger{21}] - Root WebApplicationContext: initialization completed in 2697 ms
+2025-07-25 11:35:40.789 [restartedMain] [INFO ] [logger{21}] - HikariPool-1 - Starting...
+2025-07-25 11:35:40.956 [restartedMain] [INFO ] [logger{21}] - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1aefbb7d
+2025-07-25 11:35:40.958 [restartedMain] [INFO ] [logger{21}] - HikariPool-1 - Start completed.
+2025-07-25 11:35:41.059 [restartedMain] [INFO ] [logger{21}] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-25 11:35:41.143 [restartedMain] [INFO ] [logger{21}] - HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-07-25 11:35:41.191 [restartedMain] [INFO ] [logger{21}] - HHH000026: Second-level cache disabled
+2025-07-25 11:35:41.606 [restartedMain] [INFO ] [logger{21}] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-25 11:35:41.693 [restartedMain] [WARN ] [logger{21}] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-25 11:35:41.725 [restartedMain] [INFO ] [logger{21}] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.13
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-25 11:35:41.737 [restartedMain] [DEBUG] [logger{21}] - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@5b9fb93a) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@396039b)
+2025-07-25 11:35:41.737 [restartedMain] [DEBUG] [logger{21}] - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@66ebe3b2) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@57a3ec01)
+2025-07-25 11:35:42.252 [restartedMain] [INFO ] [logger{21}] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-25 11:35:42.260 [restartedMain] [INFO ] [logger{21}] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-25 11:35:42.323 [restartedMain] [WARN ] [logger{21}] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-25 11:35:43.708 [restartedMain] [INFO ] [logger{21}] - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-07-25 11:35:44.193 [restartedMain] [INFO ] [logger{21}] - LiveReload server is running on port 35729
+2025-07-25 11:35:44.201 [restartedMain] [INFO ] [logger{21}] - Exposing 1 endpoint beneath base path '/actuator'
+2025-07-25 11:35:44.322 [restartedMain] [INFO ] [logger{21}] - Tomcat started on port 8080 (http) with context path '/'
+2025-07-25 11:35:44.340 [restartedMain] [INFO ] [logger{21}] - Started CustomApplication in 7.573 seconds (process running for 8.685)
+2025-07-25 11:35:44.350 [restartedMain] [INFO ] [logger{21}] - Running default command line with: []
+2025-07-25 11:35:44.578 [RMI TCP Connection(1)-10.10.20.94] [INFO ] [logger{21}] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-25 11:35:44.578 [RMI TCP Connection(1)-10.10.20.94] [INFO ] [logger{21}] - Initializing Servlet 'dispatcherServlet'
+2025-07-25 11:35:44.583 [RMI TCP Connection(1)-10.10.20.94] [INFO ] [logger{21}] - Completed initialization in 4 ms
+2025-07-25 11:35:51.651 [SpringApplicationShutdownHook] [INFO ] [logger{21}] - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-25 11:35:51.659 [tomcat-shutdown] [INFO ] [logger{21}] - Graceful shutdown complete
+2025-07-25 11:35:51.685 [SpringApplicationShutdownHook] [INFO ] [logger{21}] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-25 11:35:51.692 [SpringApplicationShutdownHook] [INFO ] [logger{21}] - HikariPool-1 - Shutdown initiated...
+2025-07-25 11:35:51.703 [SpringApplicationShutdownHook] [INFO ] [logger{21}] - HikariPool-1 - Shutdown completed.
+2025-07-25 11:35:55.975 [restartedMain] [INFO] [logger{36}] - Starting CustomApplication using Java 21.0.8 with PID 15476 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\main started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 11:35:55.979 [restartedMain] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 11:35:55.980 [restartedMain] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 11:35:56.034 [restartedMain] [INFO] [logger{36}] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-25 11:35:56.034 [restartedMain] [INFO] [logger{36}] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-25 11:35:57.671 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 11:35:57.672 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-07-25 11:35:57.696 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 16 ms. Found 0 JDBC repository interfaces.
+2025-07-25 11:35:57.708 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 11:35:57.710 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-25 11:35:57.719 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2025-07-25 11:35:57.732 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 11:35:57.734 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-25 11:35:57.747 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+2025-07-25 11:35:58.558 [restartedMain] [INFO] [logger{36}] - Tomcat initialized with port 8080 (http)
+2025-07-25 11:35:58.576 [restartedMain] [INFO] [logger{36}] - Starting service [Tomcat]
+2025-07-25 11:35:58.576 [restartedMain] [INFO] [logger{36}] - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-07-25 11:35:58.725 [restartedMain] [INFO] [logger{36}] - Initializing Spring embedded WebApplicationContext
+2025-07-25 11:35:58.725 [restartedMain] [INFO] [logger{36}] - Root WebApplicationContext: initialization completed in 2689 ms
+2025-07-25 11:35:58.972 [restartedMain] [INFO] [logger{36}] - HikariPool-1 - Starting...
+2025-07-25 11:35:59.129 [restartedMain] [INFO] [logger{36}] - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7a59c43e
+2025-07-25 11:35:59.131 [restartedMain] [INFO] [logger{36}] - HikariPool-1 - Start completed.
+2025-07-25 11:35:59.232 [restartedMain] [INFO] [logger{36}] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-25 11:35:59.314 [restartedMain] [INFO] [logger{36}] - HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-07-25 11:35:59.366 [restartedMain] [INFO] [logger{36}] - HHH000026: Second-level cache disabled
+2025-07-25 11:35:59.817 [restartedMain] [INFO] [logger{36}] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-25 11:35:59.896 [restartedMain] [WARN] [logger{36}] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-25 11:35:59.922 [restartedMain] [INFO] [logger{36}] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.13
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-25 11:35:59.930 [restartedMain] [DEBUG] [logger{36}] - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@7a8432a5) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@17fc8130)
+2025-07-25 11:35:59.930 [restartedMain] [DEBUG] [logger{36}] - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@5ae46abd) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@41955693)
+2025-07-25 11:36:00.397 [restartedMain] [INFO] [logger{36}] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-25 11:36:00.405 [restartedMain] [INFO] [logger{36}] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-25 11:36:00.472 [restartedMain] [WARN] [logger{36}] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-25 11:36:02.032 [restartedMain] [INFO] [logger{36}] - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-07-25 11:36:02.487 [restartedMain] [INFO] [logger{36}] - LiveReload server is running on port 35729
+2025-07-25 11:36:02.494 [restartedMain] [INFO] [logger{36}] - Exposing 1 endpoint beneath base path '/actuator'
+2025-07-25 11:36:02.602 [restartedMain] [INFO] [logger{36}] - Tomcat started on port 8080 (http) with context path '/'
+2025-07-25 11:36:02.616 [restartedMain] [INFO] [logger{36}] - Started CustomApplication in 7.676 seconds (process running for 8.872)
+2025-07-25 11:36:02.624 [restartedMain] [INFO] [logger{36}] - Running default command line with: []
+2025-07-25 11:36:03.125 [RMI TCP Connection(2)-10.10.20.94] [INFO] [logger{36}] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-25 11:36:03.125 [RMI TCP Connection(2)-10.10.20.94] [INFO] [logger{36}] - Initializing Servlet 'dispatcherServlet'
+2025-07-25 11:36:03.127 [RMI TCP Connection(2)-10.10.20.94] [INFO] [logger{36}] - Completed initialization in 2 ms
+2025-07-25 11:36:35.452 [main] [INFO] [logger{36}] - Starting CustomApplicationTests using Java 21.0.8 with PID 19676 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\test started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 11:36:35.456 [main] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 11:36:35.457 [main] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 11:36:42.057 [Test worker] [INFO] [logger{36}] - Starting CustomApplicationTests using Java 21.0.8 with PID 19444 (started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 11:36:42.060 [Test worker] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 11:36:42.062 [Test worker] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 11:36:43.592 [Test worker] [INFO] [logger{36}] - Initializing Spring TestDispatcherServlet ''
+2025-07-25 11:36:43.593 [Test worker] [INFO] [logger{36}] - Initializing Servlet ''
+2025-07-25 11:36:43.595 [Test worker] [INFO] [logger{36}] - Completed initialization in 2 ms
+2025-07-25 11:36:43.635 [Test worker] [INFO] [logger{36}] - Started CustomApplicationTests in 3.237 seconds (process running for 5.36)
+2025-07-25 11:50:07.284 [main] [INFO] [logger{36}] - Starting CustomApplication using Java 21.0.8 with PID 3836 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\main started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 11:50:07.288 [main] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 11:50:07.288 [main] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 11:50:08.867 [main] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 11:50:08.869 [main] [INFO] [logger{36}] - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-07-25 11:50:08.891 [main] [INFO] [logger{36}] - Finished Spring Data repository scanning in 14 ms. Found 0 JDBC repository interfaces.
+2025-07-25 11:50:08.905 [main] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 11:50:08.906 [main] [INFO] [logger{36}] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-25 11:50:08.917 [main] [INFO] [logger{36}] - Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2025-07-25 11:50:08.931 [main] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 11:50:08.933 [main] [INFO] [logger{36}] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-25 11:50:08.951 [main] [INFO] [logger{36}] - Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2025-07-25 11:50:15.133 [File Watcher] [INFO] [logger{36}] - Restarting due to 7 class path changes (0 additions, 0 deletions, 7 modifications)
+2025-07-25 11:50:15.138 [Thread-7] [INFO] [logger{36}] - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-25 11:50:15.145 [tomcat-shutdown] [INFO] [logger{36}] - Graceful shutdown complete
+2025-07-25 11:50:15.166 [Thread-7] [INFO] [logger{36}] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-25 11:50:15.171 [Thread-7] [INFO] [logger{36}] - HikariPool-1 - Shutdown initiated...
+2025-07-25 11:50:15.176 [Thread-7] [INFO] [logger{36}] - HikariPool-1 - Shutdown completed.
+2025-07-25 11:50:15.339 [restartedMain] [INFO] [logger{36}] - Starting CustomApplication using Java 21.0.8 with PID 15476 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\main started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 11:50:15.340 [restartedMain] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 11:50:15.340 [restartedMain] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 11:50:16.214 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 11:50:16.214 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-07-25 11:50:16.219 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 4 ms. Found 0 JDBC repository interfaces.
+2025-07-25 11:50:16.227 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 11:50:16.227 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-25 11:50:16.232 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2025-07-25 11:50:16.236 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 11:50:16.237 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-25 11:50:16.243 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2025-07-25 11:50:16.392 [restartedMain] [INFO] [logger{36}] - Tomcat initialized with port 8080 (http)
+2025-07-25 11:50:16.395 [restartedMain] [INFO] [logger{36}] - Starting service [Tomcat]
+2025-07-25 11:50:16.396 [restartedMain] [INFO] [logger{36}] - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-07-25 11:50:16.633 [restartedMain] [INFO] [logger{36}] - Initializing Spring embedded WebApplicationContext
+2025-07-25 11:50:16.636 [restartedMain] [INFO] [logger{36}] - Root WebApplicationContext: initialization completed in 1291 ms
+2025-07-25 11:50:16.823 [restartedMain] [INFO] [logger{36}] - HikariPool-2 - Starting...
+2025-07-25 11:50:16.853 [restartedMain] [INFO] [logger{36}] - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@6cc70f25
+2025-07-25 11:50:16.854 [restartedMain] [INFO] [logger{36}] - HikariPool-2 - Start completed.
+2025-07-25 11:50:16.883 [restartedMain] [INFO] [logger{36}] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-25 11:50:16.899 [restartedMain] [INFO] [logger{36}] - HHH000026: Second-level cache disabled
+2025-07-25 11:50:16.941 [restartedMain] [INFO] [logger{36}] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-25 11:50:16.949 [restartedMain] [WARN] [logger{36}] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-25 11:50:16.953 [restartedMain] [INFO] [logger{36}] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 15.13
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-25 11:50:16.953 [restartedMain] [DEBUG] [logger{36}] - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@6b908f28) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@3054f896)
+2025-07-25 11:50:16.954 [restartedMain] [DEBUG] [logger{36}] - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@a9d1e6) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@541cfe14)
+2025-07-25 11:50:17.008 [restartedMain] [INFO] [logger{36}] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-25 11:50:17.008 [restartedMain] [INFO] [logger{36}] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-25 11:50:17.051 [restartedMain] [WARN] [logger{36}] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-25 11:50:18.051 [restartedMain] [INFO] [logger{36}] - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-07-25 11:50:18.077 [restartedMain] [INFO] [logger{36}] - LiveReload server is running on port 35729
+2025-07-25 11:50:18.086 [restartedMain] [INFO] [logger{36}] - Exposing 1 endpoint beneath base path '/actuator'
+2025-07-25 11:50:18.144 [restartedMain] [INFO] [logger{36}] - Tomcat started on port 8080 (http) with context path '/'
+2025-07-25 11:50:18.158 [restartedMain] [INFO] [logger{36}] - Started CustomApplication in 2.9 seconds (process running for 864.414)
+2025-07-25 11:50:18.162 [restartedMain] [INFO] [logger{36}] - Running default command line with: []
+2025-07-25 11:50:18.168 [restartedMain] [INFO] [logger{36}] - Condition evaluation unchanged
+2025-07-25 11:52:41.674 [File Watcher] [INFO] [logger{36}] - Restarting due to 245 class path changes (0 additions, 245 deletions, 0 modifications)
+2025-07-25 11:52:41.676 [Thread-9] [INFO] [logger{36}] - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-25 11:52:41.681 [tomcat-shutdown] [INFO] [logger{36}] - Graceful shutdown complete
+2025-07-25 11:52:41.687 [Thread-9] [INFO] [logger{36}] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-25 11:52:41.688 [Thread-9] [INFO] [logger{36}] - HikariPool-2 - Shutdown initiated...
+2025-07-25 11:52:41.693 [Thread-9] [INFO] [logger{36}] - HikariPool-2 - Shutdown completed.
+2025-07-25 11:52:41.871 [restartedMain] [INFO] [logger{36}] - Starting CustomApplication using Java 21.0.8 with PID 15476 (started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 11:52:41.871 [restartedMain] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 11:52:41.871 [restartedMain] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 11:52:42.714 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 11:52:42.715 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-07-25 11:52:42.717 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 1 ms. Found 0 JDBC repository interfaces.
+2025-07-25 11:52:42.724 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 11:52:42.724 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-25 11:52:42.726 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 0 ms. Found 0 JPA repository interfaces.
+2025-07-25 11:52:42.729 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 11:52:42.729 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-25 11:52:42.732 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 0 ms. Found 0 Redis repository interfaces.
+2025-07-25 11:52:42.875 [restartedMain] [INFO] [logger{36}] - Tomcat initialized with port 8080 (http)
+2025-07-25 11:52:42.882 [restartedMain] [INFO] [logger{36}] - Starting service [Tomcat]
+2025-07-25 11:52:42.883 [restartedMain] [INFO] [logger{36}] - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-07-25 11:52:42.999 [restartedMain] [INFO] [logger{36}] - Initializing Spring embedded WebApplicationContext
+2025-07-25 11:52:42.999 [restartedMain] [INFO] [logger{36}] - Root WebApplicationContext: initialization completed in 1123 ms
+2025-07-25 11:52:43.065 [restartedMain] [INFO] [logger{36}] - HikariPool-3 - Starting...
+2025-07-25 11:52:43.102 [restartedMain] [INFO] [logger{36}] - HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@107539fa
+2025-07-25 11:52:43.103 [restartedMain] [INFO] [logger{36}] - HikariPool-3 - Start completed.
+2025-07-25 11:52:43.124 [restartedMain] [INFO] [logger{36}] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-25 11:52:43.143 [restartedMain] [INFO] [logger{36}] - HHH000026: Second-level cache disabled
+2025-07-25 11:52:43.170 [restartedMain] [INFO] [logger{36}] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-25 11:52:43.180 [restartedMain] [WARN] [logger{36}] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-25 11:52:43.185 [restartedMain] [INFO] [logger{36}] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-3)']
+	Database driver: undefined/unknown
+	Database version: 15.13
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-25 11:52:43.186 [restartedMain] [DEBUG] [logger{36}] - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@76a9b514) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@24165b5a)
+2025-07-25 11:52:43.187 [restartedMain] [DEBUG] [logger{36}] - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@61f259d9) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@4e4a7445)
+2025-07-25 11:52:43.227 [restartedMain] [INFO] [logger{36}] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-25 11:52:43.229 [restartedMain] [INFO] [logger{36}] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-25 11:52:43.258 [restartedMain] [WARN] [logger{36}] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-25 11:52:43.896 [restartedMain] [INFO] [logger{36}] - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-07-25 11:52:43.910 [restartedMain] [INFO] [logger{36}] - LiveReload server is running on port 35729
+2025-07-25 11:52:43.914 [restartedMain] [INFO] [logger{36}] - Exposing 1 endpoint beneath base path '/actuator'
+2025-07-25 11:52:43.956 [restartedMain] [INFO] [logger{36}] - Tomcat started on port 8080 (http) with context path '/'
+2025-07-25 11:52:43.964 [restartedMain] [INFO] [logger{36}] - Started CustomApplication in 2.175 seconds (process running for 1010.22)
+2025-07-25 11:52:43.966 [restartedMain] [INFO] [logger{36}] - Running default command line with: []
+2025-07-25 11:52:43.967 [restartedMain] [INFO] [logger{36}] - Condition evaluation unchanged
+2025-07-25 11:52:45.332 [File Watcher] [INFO] [logger{36}] - Restarting due to 9 class path changes (0 additions, 9 deletions, 0 modifications)
+2025-07-25 11:52:45.334 [Thread-15] [INFO] [logger{36}] - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-25 11:52:45.340 [tomcat-shutdown] [INFO] [logger{36}] - Graceful shutdown complete
+2025-07-25 11:52:45.345 [Thread-15] [INFO] [logger{36}] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-25 11:52:45.347 [Thread-15] [INFO] [logger{36}] - HikariPool-3 - Shutdown initiated...
+2025-07-25 11:52:45.351 [Thread-15] [INFO] [logger{36}] - HikariPool-3 - Shutdown completed.
+2025-07-25 11:54:07.926 [main] [INFO] [logger{36}] - Starting CustomApplication using Java 21.0.8 with PID 11176 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\main started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 11:54:07.930 [main] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 11:54:07.931 [main] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 11:54:09.516 [main] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 11:54:09.519 [main] [INFO] [logger{36}] - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-07-25 11:54:09.544 [main] [INFO] [logger{36}] - Finished Spring Data repository scanning in 15 ms. Found 0 JDBC repository interfaces.
+2025-07-25 11:54:09.558 [main] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 11:54:09.560 [main] [INFO] [logger{36}] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-25 11:54:09.569 [main] [INFO] [logger{36}] - Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2025-07-25 11:54:09.585 [main] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 11:54:09.587 [main] [INFO] [logger{36}] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-25 11:54:09.603 [main] [INFO] [logger{36}] - Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2025-07-25 11:54:24.961 [main] [INFO] [logger{36}] - Starting CustomApplicationTests using Java 21.0.8 with PID 20960 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\test started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 11:54:24.964 [main] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 11:54:24.965 [main] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 11:54:33.807 [Test worker] [INFO] [logger{36}] - Starting CustomApplicationTests using Java 21.0.8 with PID 10492 (started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 11:54:33.810 [Test worker] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 11:54:33.811 [Test worker] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 11:54:35.265 [Test worker] [INFO] [logger{36}] - Initializing Spring TestDispatcherServlet ''
+2025-07-25 11:54:35.265 [Test worker] [INFO] [logger{36}] - Initializing Servlet ''
+2025-07-25 11:54:35.267 [Test worker] [INFO] [logger{36}] - Completed initialization in 2 ms
+2025-07-25 11:54:35.316 [Test worker] [INFO] [logger{36}] - Started CustomApplicationTests in 2.98 seconds (process running for 4.893)
+2025-07-25 12:09:38.785 [main] [INFO] [logger{36}] - Starting CustomApplication using Java 21.0.8 with PID 25884 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\main started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 12:09:38.789 [main] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 12:09:38.790 [main] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 12:09:40.361 [main] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 12:09:40.363 [main] [INFO] [logger{36}] - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-07-25 12:09:40.386 [main] [INFO] [logger{36}] - Finished Spring Data repository scanning in 15 ms. Found 0 JDBC repository interfaces.
+2025-07-25 12:09:40.400 [main] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 12:09:40.402 [main] [INFO] [logger{36}] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-25 12:09:40.411 [main] [INFO] [logger{36}] - Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2025-07-25 12:09:40.428 [main] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 12:09:40.431 [main] [INFO] [logger{36}] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-25 12:09:40.451 [main] [INFO] [logger{36}] - Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2025-07-25 12:09:58.041 [main] [INFO] [logger{36}] - Starting CustomApplicationTests using Java 21.0.8 with PID 23076 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\test started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 12:09:58.045 [main] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 12:09:58.046 [main] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 12:10:08.631 [Test worker] [INFO] [logger{36}] - Starting CustomApplicationTests using Java 21.0.8 with PID 26352 (started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 12:10:08.634 [Test worker] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 12:10:08.635 [Test worker] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 12:10:10.204 [Test worker] [INFO] [logger{36}] - Initializing Spring TestDispatcherServlet ''
+2025-07-25 12:10:10.205 [Test worker] [INFO] [logger{36}] - Initializing Servlet ''
+2025-07-25 12:10:10.206 [Test worker] [INFO] [logger{36}] - Completed initialization in 1 ms
+2025-07-25 12:10:10.288 [Test worker] [INFO] [logger{36}] - Started CustomApplicationTests in 3.09 seconds (process running for 5.218)
+2025-07-25 12:11:03.016 [main] [INFO] [logger{36}] - Starting CustomApplication using Java 21.0.8 with PID 10024 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\main started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 12:11:03.019 [main] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 12:11:03.020 [main] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 12:11:04.510 [main] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 12:11:04.512 [main] [INFO] [logger{36}] - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-07-25 12:11:04.535 [main] [INFO] [logger{36}] - Finished Spring Data repository scanning in 15 ms. Found 0 JDBC repository interfaces.
+2025-07-25 12:11:04.550 [main] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 12:11:04.553 [main] [INFO] [logger{36}] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-25 12:11:04.564 [main] [INFO] [logger{36}] - Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2025-07-25 12:11:04.585 [main] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 12:11:04.587 [main] [INFO] [logger{36}] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-25 12:11:04.607 [main] [INFO] [logger{36}] - Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2025-07-25 12:11:22.900 [main] [INFO] [logger{36}] - Starting CustomApplicationTests using Java 21.0.8 with PID 26032 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\test started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 12:11:22.904 [main] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 12:11:22.906 [main] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 12:11:34.414 [Test worker] [INFO] [logger{36}] - Starting CustomApplicationTests using Java 21.0.8 with PID 15056 (started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 12:11:34.417 [Test worker] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 12:11:34.418 [Test worker] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 12:11:35.899 [Test worker] [INFO] [logger{36}] - Initializing Spring TestDispatcherServlet ''
+2025-07-25 12:11:35.900 [Test worker] [INFO] [logger{36}] - Initializing Servlet ''
+2025-07-25 12:11:35.901 [Test worker] [INFO] [logger{36}] - Completed initialization in 0 ms
+2025-07-25 12:11:35.938 [Test worker] [INFO] [logger{36}] - Started CustomApplicationTests in 2.904 seconds (process running for 4.817)
+2025-07-25 12:16:59.973 [main] [INFO] [logger{36}] - Starting CustomApplication using Java 21.0.8 with PID 25928 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\main started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 12:16:59.979 [main] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 12:16:59.980 [main] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 12:17:01.502 [main] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 12:17:01.505 [main] [INFO] [logger{36}] - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-07-25 12:17:01.531 [main] [INFO] [logger{36}] - Finished Spring Data repository scanning in 17 ms. Found 0 JDBC repository interfaces.
+2025-07-25 12:17:01.549 [main] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 12:17:01.551 [main] [INFO] [logger{36}] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-25 12:17:01.563 [main] [INFO] [logger{36}] - Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2025-07-25 12:17:01.582 [main] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 12:17:01.584 [main] [INFO] [logger{36}] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-25 12:17:01.604 [main] [INFO] [logger{36}] - Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2025-07-25 12:17:20.252 [main] [INFO] [logger{36}] - Starting CustomApplicationTests using Java 21.0.8 with PID 2456 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\test started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 12:17:20.255 [main] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 12:17:20.257 [main] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 12:17:27.184 [Test worker] [INFO] [logger{36}] - Starting CustomApplicationTests using Java 21.0.8 with PID 13472 (started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 12:17:27.187 [Test worker] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 12:17:27.188 [Test worker] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 12:17:28.990 [Test worker] [INFO] [logger{36}] - Initializing Spring TestDispatcherServlet ''
+2025-07-25 12:17:28.990 [Test worker] [INFO] [logger{36}] - Initializing Servlet ''
+2025-07-25 12:17:28.993 [Test worker] [INFO] [logger{36}] - Completed initialization in 1 ms
+2025-07-25 12:17:29.033 [Test worker] [INFO] [logger{36}] - Started CustomApplicationTests in 3.506 seconds (process running for 5.578)
+2025-07-25 12:24:48.601 [main] [INFO] [logger{36}] - Starting CustomApplication using Java 21.0.8 with PID 27092 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\main started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 12:24:48.605 [main] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 12:24:48.607 [main] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 12:24:50.123 [main] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 12:24:50.126 [main] [INFO] [logger{36}] - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-07-25 12:24:50.156 [main] [INFO] [logger{36}] - Finished Spring Data repository scanning in 20 ms. Found 0 JDBC repository interfaces.
+2025-07-25 12:24:50.170 [main] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 12:24:50.172 [main] [INFO] [logger{36}] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-25 12:24:50.182 [main] [INFO] [logger{36}] - Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2025-07-25 12:24:50.197 [main] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 12:24:50.199 [main] [INFO] [logger{36}] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-25 12:24:50.216 [main] [INFO] [logger{36}] - Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2025-07-25 12:24:59.666 [main] [INFO] [logger{36}] - Starting CustomApplicationTests using Java 21.0.8 with PID 17252 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\test started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 12:24:59.672 [main] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 12:24:59.673 [main] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 12:25:05.669 [Test worker] [INFO] [logger{36}] - Starting CustomApplicationTests using Java 21.0.8 with PID 2672 (started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 12:25:05.672 [Test worker] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 12:25:05.673 [Test worker] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 12:25:07.212 [Test worker] [INFO] [logger{36}] - Initializing Spring TestDispatcherServlet ''
+2025-07-25 12:25:07.213 [Test worker] [INFO] [logger{36}] - Initializing Servlet ''
+2025-07-25 12:25:07.215 [Test worker] [INFO] [logger{36}] - Completed initialization in 2 ms
+2025-07-25 12:25:07.261 [Test worker] [INFO] [logger{36}] - Started CustomApplicationTests in 3.095 seconds (process running for 5.098)
+2025-07-25 12:27:56.967 [main] [INFO] [logger{36}] - Starting CustomApplication using Java 21.0.8 with PID 3484 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\main started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 12:27:56.972 [main] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 12:27:56.973 [main] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 12:27:58.452 [main] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 12:27:58.454 [main] [INFO] [logger{36}] - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-07-25 12:27:58.477 [main] [INFO] [logger{36}] - Finished Spring Data repository scanning in 14 ms. Found 0 JDBC repository interfaces.
+2025-07-25 12:27:58.490 [main] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 12:27:58.492 [main] [INFO] [logger{36}] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-25 12:27:58.503 [main] [INFO] [logger{36}] - Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2025-07-25 12:27:58.518 [main] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 12:27:58.522 [main] [INFO] [logger{36}] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-25 12:27:58.537 [main] [INFO] [logger{36}] - Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2025-07-25 12:28:08.947 [main] [INFO] [logger{36}] - Starting CustomApplicationTests using Java 21.0.8 with PID 15040 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\test started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 12:28:08.950 [main] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 12:28:08.951 [main] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 12:28:15.187 [Test worker] [INFO] [logger{36}] - Starting CustomApplicationTests using Java 21.0.8 with PID 4184 (started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 12:28:15.189 [Test worker] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 12:28:15.190 [Test worker] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 12:28:16.997 [Test worker] [INFO] [logger{36}] - Initializing Spring TestDispatcherServlet ''
+2025-07-25 12:28:16.998 [Test worker] [INFO] [logger{36}] - Initializing Servlet ''
+2025-07-25 12:28:17.000 [Test worker] [INFO] [logger{36}] - Completed initialization in 1 ms
+2025-07-25 12:28:17.047 [Test worker] [INFO] [logger{36}] - Started CustomApplicationTests in 3.507 seconds (process running for 5.471)
+2025-07-25 12:31:08.485 [main] [INFO] [logger{36}] - Starting CustomApplication using Java 21.0.8 with PID 10248 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\main started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 12:31:08.489 [main] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 12:31:08.490 [main] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 12:31:10.085 [main] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 12:31:10.087 [main] [INFO] [logger{36}] - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-07-25 12:31:10.113 [main] [INFO] [logger{36}] - Finished Spring Data repository scanning in 17 ms. Found 0 JDBC repository interfaces.
+2025-07-25 12:31:10.127 [main] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 12:31:10.129 [main] [INFO] [logger{36}] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-25 12:31:10.138 [main] [INFO] [logger{36}] - Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2025-07-25 12:31:10.154 [main] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 12:31:10.157 [main] [INFO] [logger{36}] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-25 12:31:10.174 [main] [INFO] [logger{36}] - Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2025-07-25 12:31:23.130 [main] [INFO] [logger{36}] - Starting CustomApplicationTests using Java 21.0.8 with PID 14500 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\test started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 12:31:23.134 [main] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 12:31:23.135 [main] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 12:31:29.119 [Test worker] [INFO] [logger{36}] - Starting CustomApplicationTests using Java 21.0.8 with PID 20196 (started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 12:31:29.121 [Test worker] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 12:31:29.123 [Test worker] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 12:31:30.649 [Test worker] [INFO] [logger{36}] - Initializing Spring TestDispatcherServlet ''
+2025-07-25 12:31:30.650 [Test worker] [INFO] [logger{36}] - Initializing Servlet ''
+2025-07-25 12:31:30.652 [Test worker] [INFO] [logger{36}] - Completed initialization in 2 ms
+2025-07-25 12:31:30.702 [Test worker] [INFO] [logger{36}] - Started CustomApplicationTests in 3.043 seconds (process running for 4.971)
+2025-07-25 12:44:21.725 [main] [INFO] [logger{36}] - Starting CustomApplicationTests using Java 21.0.8 with PID 12428 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\test started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 12:44:21.728 [main] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 12:44:21.729 [main] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 12:44:27.691 [Test worker] [INFO] [logger{36}] - Starting CustomApplicationTests using Java 21.0.8 with PID 3952 (started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 12:44:27.694 [Test worker] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 12:44:27.696 [Test worker] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 12:44:29.377 [Test worker] [INFO] [logger{36}] - Initializing Spring TestDispatcherServlet ''
+2025-07-25 12:44:29.377 [Test worker] [INFO] [logger{36}] - Initializing Servlet ''
+2025-07-25 12:44:29.379 [Test worker] [INFO] [logger{36}] - Completed initialization in 1 ms
+2025-07-25 12:44:29.418 [Test worker] [INFO] [logger{36}] - Started CustomApplicationTests in 3.181 seconds (process running for 5.157)
+2025-07-25 12:47:10.803 [main] [INFO] [logger{36}] - Starting CustomApplication using Java 21.0.8 with PID 3488 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\main started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 12:47:10.808 [main] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 12:47:10.809 [main] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 12:47:12.261 [main] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 12:47:12.264 [main] [INFO] [logger{36}] - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-07-25 12:47:12.287 [main] [INFO] [logger{36}] - Finished Spring Data repository scanning in 16 ms. Found 0 JDBC repository interfaces.
+2025-07-25 12:47:12.303 [main] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 12:47:12.305 [main] [INFO] [logger{36}] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-25 12:47:12.315 [main] [INFO] [logger{36}] - Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2025-07-25 12:47:12.330 [main] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 12:47:12.332 [main] [INFO] [logger{36}] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-25 12:47:12.347 [main] [INFO] [logger{36}] - Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2025-07-25 12:47:24.879 [main] [INFO] [logger{36}] - Starting CustomApplicationTests using Java 21.0.8 with PID 8996 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\test started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 12:47:24.882 [main] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 12:47:24.883 [main] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 12:47:30.919 [Test worker] [INFO] [logger{36}] - Starting CustomApplicationTests using Java 21.0.8 with PID 16504 (started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 12:47:30.922 [Test worker] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 12:47:30.923 [Test worker] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 12:47:32.314 [Test worker] [INFO] [logger{36}] - Initializing Spring TestDispatcherServlet ''
+2025-07-25 12:47:32.315 [Test worker] [INFO] [logger{36}] - Initializing Servlet ''
+2025-07-25 12:47:32.317 [Test worker] [INFO] [logger{36}] - Completed initialization in 1 ms
+2025-07-25 12:47:32.350 [Test worker] [INFO] [logger{36}] - Started CustomApplicationTests in 2.827 seconds (process running for 4.833)
+2025-07-25 14:04:57.855 [restartedMain] [INFO] [logger{36}] - Starting CustomApplication using Java 21.0.8 with PID 25596 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\main started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 14:04:57.861 [restartedMain] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 14:04:57.862 [restartedMain] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 14:04:57.957 [restartedMain] [INFO] [logger{36}] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-25 14:04:57.957 [restartedMain] [INFO] [logger{36}] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-25 14:05:01.317 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 14:05:01.320 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-07-25 14:05:01.351 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 21 ms. Found 0 JDBC repository interfaces.
+2025-07-25 14:05:01.370 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 14:05:01.372 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-25 14:05:01.387 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces.
+2025-07-25 14:05:01.413 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 14:05:01.415 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-25 14:05:01.445 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2025-07-25 14:05:02.911 [restartedMain] [INFO] [logger{36}] - Tomcat initialized with port 8080 (http)
+2025-07-25 14:05:02.941 [restartedMain] [INFO] [logger{36}] - Starting service [Tomcat]
+2025-07-25 14:05:02.942 [restartedMain] [INFO] [logger{36}] - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-07-25 14:05:03.368 [restartedMain] [INFO] [logger{36}] - Initializing Spring embedded WebApplicationContext
+2025-07-25 14:05:03.369 [restartedMain] [INFO] [logger{36}] - Root WebApplicationContext: initialization completed in 5410 ms
+2025-07-25 14:05:04.100 [restartedMain] [INFO] [logger{36}] - HikariPool-1 - Starting...
+2025-07-25 14:05:04.418 [restartedMain] [INFO] [logger{36}] - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@504f617f
+2025-07-25 14:05:04.423 [restartedMain] [INFO] [logger{36}] - HikariPool-1 - Start completed.
+2025-07-25 14:05:04.653 [restartedMain] [INFO] [logger{36}] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-25 14:05:04.862 [restartedMain] [INFO] [logger{36}] - HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-07-25 14:05:04.985 [restartedMain] [INFO] [logger{36}] - HHH000026: Second-level cache disabled
+2025-07-25 14:05:05.683 [restartedMain] [INFO] [logger{36}] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-25 14:05:05.802 [restartedMain] [WARN] [logger{36}] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-25 14:05:05.832 [restartedMain] [INFO] [logger{36}] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.13
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-25 14:05:05.843 [restartedMain] [DEBUG] [logger{36}] - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@3875e3f) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@2d3f5861)
+2025-07-25 14:05:05.843 [restartedMain] [DEBUG] [logger{36}] - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@2c6cad90) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@76db46)
+2025-07-25 14:05:06.486 [restartedMain] [INFO] [logger{36}] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-25 14:05:06.497 [restartedMain] [INFO] [logger{36}] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-25 14:05:06.584 [restartedMain] [WARN] [logger{36}] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-25 14:05:09.036 [restartedMain] [INFO] [logger{36}] - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-07-25 14:05:09.779 [restartedMain] [INFO] [logger{36}] - LiveReload server is running on port 35729
+2025-07-25 14:05:09.794 [restartedMain] [INFO] [logger{36}] - Exposing 1 endpoint beneath base path '/actuator'
+2025-07-25 14:05:09.967 [restartedMain] [INFO] [logger{36}] - Tomcat started on port 8080 (http) with context path '/'
+2025-07-25 14:05:10.008 [restartedMain] [INFO] [logger{36}] - Started CustomApplication in 13.465 seconds (process running for 15.475)
+2025-07-25 14:05:10.025 [restartedMain] [INFO] [logger{36}] - Running default command line with: []
+2025-07-25 14:10:26.486 [SpringApplicationShutdownHook] [INFO] [logger{36}] - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-25 14:10:26.493 [tomcat-shutdown] [INFO] [logger{36}] - Graceful shutdown complete
+2025-07-25 14:10:26.522 [SpringApplicationShutdownHook] [INFO] [logger{36}] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-25 14:10:26.529 [SpringApplicationShutdownHook] [INFO] [logger{36}] - HikariPool-1 - Shutdown initiated...
+2025-07-25 14:10:26.537 [SpringApplicationShutdownHook] [INFO] [logger{36}] - HikariPool-1 - Shutdown completed.
+2025-07-25 14:11:54.400 [restartedMain] [INFO] [logger{36}] - Starting CustomApplication using Java 21.0.8 with PID 14072 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\main started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 14:11:54.405 [restartedMain] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 14:11:54.406 [restartedMain] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 14:11:54.487 [restartedMain] [INFO] [logger{36}] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-25 14:11:54.487 [restartedMain] [INFO] [logger{36}] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-25 14:11:56.169 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 14:11:56.171 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-07-25 14:11:56.194 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 15 ms. Found 0 JDBC repository interfaces.
+2025-07-25 14:11:56.207 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 14:11:56.209 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-25 14:11:56.218 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2025-07-25 14:11:56.232 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 14:11:56.233 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-25 14:11:56.247 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2025-07-25 14:11:57.108 [restartedMain] [INFO] [logger{36}] - Tomcat initialized with port 8080 (http)
+2025-07-25 14:11:57.129 [restartedMain] [INFO] [logger{36}] - Starting service [Tomcat]
+2025-07-25 14:11:57.130 [restartedMain] [INFO] [logger{36}] - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-07-25 14:11:57.290 [restartedMain] [INFO] [logger{36}] - Initializing Spring embedded WebApplicationContext
+2025-07-25 14:11:57.291 [restartedMain] [INFO] [logger{36}] - Root WebApplicationContext: initialization completed in 2802 ms
+2025-07-25 14:11:57.621 [restartedMain] [INFO] [logger{36}] - HikariPool-1 - Starting...
+2025-07-25 14:11:57.796 [restartedMain] [INFO] [logger{36}] - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@119ceafc
+2025-07-25 14:11:57.798 [restartedMain] [INFO] [logger{36}] - HikariPool-1 - Start completed.
+2025-07-25 14:11:57.909 [restartedMain] [INFO] [logger{36}] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-25 14:11:58.016 [restartedMain] [INFO] [logger{36}] - HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-07-25 14:11:58.073 [restartedMain] [INFO] [logger{36}] - HHH000026: Second-level cache disabled
+2025-07-25 14:11:58.594 [restartedMain] [INFO] [logger{36}] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-25 14:11:58.691 [restartedMain] [WARN] [logger{36}] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-25 14:11:58.715 [restartedMain] [INFO] [logger{36}] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.13
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-25 14:11:58.724 [restartedMain] [DEBUG] [logger{36}] - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@47ed376e) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@7e7fc693)
+2025-07-25 14:11:58.724 [restartedMain] [DEBUG] [logger{36}] - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@2a709a98) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@622ad64e)
+2025-07-25 14:11:59.272 [restartedMain] [INFO] [logger{36}] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-25 14:11:59.279 [restartedMain] [INFO] [logger{36}] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-25 14:11:59.350 [restartedMain] [WARN] [logger{36}] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-25 14:12:00.722 [restartedMain] [INFO] [logger{36}] - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-07-25 14:12:01.188 [restartedMain] [INFO] [logger{36}] - LiveReload server is running on port 35729
+2025-07-25 14:12:01.196 [restartedMain] [INFO] [logger{36}] - Exposing 1 endpoint beneath base path '/actuator'
+2025-07-25 14:12:01.294 [restartedMain] [INFO] [logger{36}] - Tomcat started on port 8080 (http) with context path '/'
+2025-07-25 14:12:01.308 [restartedMain] [INFO] [logger{36}] - Started CustomApplication in 8.022 seconds (process running for 9.495)
+2025-07-25 14:12:01.316 [restartedMain] [INFO] [logger{36}] - Running default command line with: []
+2025-07-25 14:12:01.804 [RMI TCP Connection(3)-10.10.20.94] [INFO] [logger{36}] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-25 14:12:01.805 [RMI TCP Connection(3)-10.10.20.94] [INFO] [logger{36}] - Initializing Servlet 'dispatcherServlet'
+2025-07-25 14:12:01.808 [RMI TCP Connection(3)-10.10.20.94] [INFO] [logger{36}] - Completed initialization in 3 ms
+2025-07-25 14:21:47.317 [File Watcher] [INFO] [logger{36}] - Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2025-07-25 14:21:47.328 [Thread-7] [INFO] [logger{36}] - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-25 14:21:47.337 [tomcat-shutdown] [INFO] [logger{36}] - Graceful shutdown complete
+2025-07-25 14:21:47.365 [Thread-7] [INFO] [logger{36}] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-25 14:21:47.371 [Thread-7] [INFO] [logger{36}] - HikariPool-1 - Shutdown initiated...
+2025-07-25 14:21:47.379 [Thread-7] [INFO] [logger{36}] - HikariPool-1 - Shutdown completed.
+2025-07-25 14:21:47.563 [restartedMain] [INFO] [logger{36}] - Starting CustomApplication using Java 21.0.8 with PID 14072 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\main started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 14:21:47.563 [restartedMain] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 14:21:47.563 [restartedMain] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 14:21:48.537 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 14:21:48.538 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-07-25 14:21:48.549 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 8 ms. Found 0 JDBC repository interfaces.
+2025-07-25 14:21:48.561 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 14:21:48.562 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-25 14:21:48.569 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2025-07-25 14:21:48.575 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 14:21:48.575 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-25 14:21:48.582 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+2025-07-25 14:21:48.774 [restartedMain] [INFO] [logger{36}] - Tomcat initialized with port 8080 (http)
+2025-07-25 14:21:48.775 [restartedMain] [INFO] [logger{36}] - Starting service [Tomcat]
+2025-07-25 14:21:48.776 [restartedMain] [INFO] [logger{36}] - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-07-25 14:21:48.933 [restartedMain] [INFO] [logger{36}] - Initializing Spring embedded WebApplicationContext
+2025-07-25 14:21:48.934 [restartedMain] [INFO] [logger{36}] - Root WebApplicationContext: initialization completed in 1365 ms
+2025-07-25 14:21:49.138 [restartedMain] [INFO] [logger{36}] - HikariPool-2 - Starting...
+2025-07-25 14:21:49.172 [restartedMain] [INFO] [logger{36}] - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@4889df23
+2025-07-25 14:21:49.172 [restartedMain] [INFO] [logger{36}] - HikariPool-2 - Start completed.
+2025-07-25 14:21:49.199 [restartedMain] [INFO] [logger{36}] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-25 14:21:49.214 [restartedMain] [INFO] [logger{36}] - HHH000026: Second-level cache disabled
+2025-07-25 14:21:49.241 [restartedMain] [INFO] [logger{36}] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-25 14:21:49.249 [restartedMain] [WARN] [logger{36}] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-25 14:21:49.255 [restartedMain] [INFO] [logger{36}] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 15.13
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-25 14:21:49.256 [restartedMain] [DEBUG] [logger{36}] - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@1fcc0f24) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@52c0ff3)
+2025-07-25 14:21:49.256 [restartedMain] [DEBUG] [logger{36}] - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@62eda4cc) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@60f2cc02)
+2025-07-25 14:21:49.324 [restartedMain] [INFO] [logger{36}] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-25 14:21:49.325 [restartedMain] [INFO] [logger{36}] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-25 14:21:49.379 [restartedMain] [WARN] [logger{36}] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-25 14:21:49.882 [restartedMain] [INFO] [logger{36}] - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-07-25 14:21:49.897 [restartedMain] [INFO] [logger{36}] - LiveReload server is running on port 35729
+2025-07-25 14:21:49.901 [restartedMain] [INFO] [logger{36}] - Exposing 1 endpoint beneath base path '/actuator'
+2025-07-25 14:21:49.942 [restartedMain] [INFO] [logger{36}] - Tomcat started on port 8080 (http) with context path '/'
+2025-07-25 14:21:49.951 [restartedMain] [INFO] [logger{36}] - Started CustomApplication in 2.489 seconds (process running for 598.137)
+2025-07-25 14:21:49.953 [restartedMain] [INFO] [logger{36}] - Running default command line with: []
+2025-07-25 14:21:49.956 [restartedMain] [INFO] [logger{36}] - Condition evaluation unchanged
+2025-07-25 14:21:52.321 [File Watcher] [INFO] [logger{36}] - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2025-07-25 14:21:52.325 [Thread-9] [INFO] [logger{36}] - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-25 14:21:52.335 [tomcat-shutdown] [INFO] [logger{36}] - Graceful shutdown complete
+2025-07-25 14:21:52.344 [Thread-9] [INFO] [logger{36}] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-25 14:21:52.346 [Thread-9] [INFO] [logger{36}] - HikariPool-2 - Shutdown initiated...
+2025-07-25 14:21:52.354 [Thread-9] [INFO] [logger{36}] - HikariPool-2 - Shutdown completed.
+2025-07-25 14:21:52.431 [main] [INFO] [logger{36}] - Starting CustomApplication using Java 21.0.8 with PID 2836 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\main started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 14:21:52.436 [main] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 14:21:52.438 [main] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 14:21:52.583 [restartedMain] [INFO] [logger{36}] - Starting CustomApplication using Java 21.0.8 with PID 14072 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\main started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 14:21:52.584 [restartedMain] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 14:21:52.584 [restartedMain] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 14:21:53.583 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 14:21:53.583 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-07-25 14:21:53.589 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 5 ms. Found 0 JDBC repository interfaces.
+2025-07-25 14:21:53.596 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 14:21:53.597 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-25 14:21:53.603 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2025-07-25 14:21:53.607 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 14:21:53.607 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-25 14:21:53.614 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+2025-07-25 14:21:53.767 [restartedMain] [INFO] [logger{36}] - Tomcat initialized with port 8080 (http)
+2025-07-25 14:21:53.769 [restartedMain] [INFO] [logger{36}] - Starting service [Tomcat]
+2025-07-25 14:21:53.769 [restartedMain] [INFO] [logger{36}] - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-07-25 14:21:53.922 [restartedMain] [INFO] [logger{36}] - Initializing Spring embedded WebApplicationContext
+2025-07-25 14:21:53.922 [restartedMain] [INFO] [logger{36}] - Root WebApplicationContext: initialization completed in 1331 ms
+2025-07-25 14:21:54.027 [restartedMain] [INFO] [logger{36}] - HikariPool-3 - Starting...
+2025-07-25 14:21:54.065 [restartedMain] [INFO] [logger{36}] - HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@e4199a3
+2025-07-25 14:21:54.065 [restartedMain] [INFO] [logger{36}] - HikariPool-3 - Start completed.
+2025-07-25 14:21:54.084 [restartedMain] [INFO] [logger{36}] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-25 14:21:54.099 [restartedMain] [INFO] [logger{36}] - HHH000026: Second-level cache disabled
+2025-07-25 14:21:54.128 [restartedMain] [INFO] [logger{36}] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-25 14:21:54.138 [restartedMain] [WARN] [logger{36}] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-25 14:21:54.142 [restartedMain] [INFO] [logger{36}] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-3)']
+	Database driver: undefined/unknown
+	Database version: 15.13
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-25 14:21:54.143 [restartedMain] [DEBUG] [logger{36}] - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@7103c7c3) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@73c80e06)
+2025-07-25 14:21:54.143 [restartedMain] [DEBUG] [logger{36}] - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@46773761) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@2bb09232)
+2025-07-25 14:21:54.167 [main] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 14:21:54.171 [main] [INFO] [logger{36}] - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-07-25 14:21:54.193 [restartedMain] [INFO] [logger{36}] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-25 14:21:54.193 [restartedMain] [INFO] [logger{36}] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-25 14:21:54.202 [main] [INFO] [logger{36}] - Finished Spring Data repository scanning in 20 ms. Found 0 JDBC repository interfaces.
+2025-07-25 14:21:54.217 [main] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 14:21:54.219 [main] [INFO] [logger{36}] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-25 14:21:54.231 [restartedMain] [WARN] [logger{36}] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-25 14:21:54.232 [main] [INFO] [logger{36}] - Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2025-07-25 14:21:54.253 [main] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 14:21:54.256 [main] [INFO] [logger{36}] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-25 14:21:54.276 [main] [INFO] [logger{36}] - Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2025-07-25 14:21:54.694 [restartedMain] [INFO] [logger{36}] - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-07-25 14:21:54.711 [restartedMain] [INFO] [logger{36}] - LiveReload server is running on port 35729
+2025-07-25 14:21:54.716 [restartedMain] [INFO] [logger{36}] - Exposing 1 endpoint beneath base path '/actuator'
+2025-07-25 14:21:54.762 [restartedMain] [INFO] [logger{36}] - Tomcat started on port 8080 (http) with context path '/'
+2025-07-25 14:21:54.772 [restartedMain] [INFO] [logger{36}] - Started CustomApplication in 2.284 seconds (process running for 602.959)
+2025-07-25 14:21:54.774 [restartedMain] [INFO] [logger{36}] - Running default command line with: []
+2025-07-25 14:21:54.776 [restartedMain] [INFO] [logger{36}] - Condition evaluation unchanged
+2025-07-25 14:22:02.791 [File Watcher] [INFO] [logger{36}] - Restarting due to 9 class path changes (0 additions, 0 deletions, 9 modifications)
+2025-07-25 14:22:02.793 [Thread-15] [INFO] [logger{36}] - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-25 14:22:02.800 [tomcat-shutdown] [INFO] [logger{36}] - Graceful shutdown complete
+2025-07-25 14:22:02.808 [Thread-15] [INFO] [logger{36}] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-25 14:22:02.809 [Thread-15] [INFO] [logger{36}] - HikariPool-3 - Shutdown initiated...
+2025-07-25 14:22:02.816 [Thread-15] [INFO] [logger{36}] - HikariPool-3 - Shutdown completed.
+2025-07-25 14:22:02.996 [restartedMain] [INFO] [logger{36}] - Starting CustomApplication using Java 21.0.8 with PID 14072 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\main started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 14:22:02.997 [restartedMain] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 14:22:02.997 [restartedMain] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 14:22:03.791 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 14:22:03.791 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-07-25 14:22:03.796 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 4 ms. Found 0 JDBC repository interfaces.
+2025-07-25 14:22:03.803 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 14:22:03.803 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-25 14:22:03.807 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2025-07-25 14:22:03.811 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 14:22:03.811 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-25 14:22:03.816 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2025-07-25 14:22:03.919 [restartedMain] [INFO] [logger{36}] - Tomcat initialized with port 8080 (http)
+2025-07-25 14:22:03.920 [restartedMain] [INFO] [logger{36}] - Starting service [Tomcat]
+2025-07-25 14:22:03.920 [restartedMain] [INFO] [logger{36}] - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-07-25 14:22:04.033 [restartedMain] [INFO] [logger{36}] - Initializing Spring embedded WebApplicationContext
+2025-07-25 14:22:04.033 [restartedMain] [INFO] [logger{36}] - Root WebApplicationContext: initialization completed in 1031 ms
+2025-07-25 14:22:04.082 [restartedMain] [INFO] [logger{36}] - HikariPool-4 - Starting...
+2025-07-25 14:22:04.106 [restartedMain] [INFO] [logger{36}] - HikariPool-4 - Added connection org.postgresql.jdbc.PgConnection@6bff3052
+2025-07-25 14:22:04.106 [restartedMain] [INFO] [logger{36}] - HikariPool-4 - Start completed.
+2025-07-25 14:22:04.118 [restartedMain] [INFO] [logger{36}] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-25 14:22:04.130 [restartedMain] [INFO] [logger{36}] - HHH000026: Second-level cache disabled
+2025-07-25 14:22:04.148 [restartedMain] [INFO] [logger{36}] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-25 14:22:04.154 [restartedMain] [WARN] [logger{36}] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-25 14:22:04.158 [restartedMain] [INFO] [logger{36}] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-4)']
+	Database driver: undefined/unknown
+	Database version: 15.13
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-25 14:22:04.158 [restartedMain] [DEBUG] [logger{36}] - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@35f3fa03) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@6573d78)
+2025-07-25 14:22:04.158 [restartedMain] [DEBUG] [logger{36}] - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@48997740) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@4cbefb3e)
+2025-07-25 14:22:04.201 [restartedMain] [INFO] [logger{36}] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-25 14:22:04.202 [restartedMain] [INFO] [logger{36}] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-25 14:22:04.246 [restartedMain] [WARN] [logger{36}] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-25 14:22:04.648 [restartedMain] [INFO] [logger{36}] - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-07-25 14:22:04.668 [restartedMain] [INFO] [logger{36}] - LiveReload server is running on port 35729
+2025-07-25 14:22:04.673 [restartedMain] [INFO] [logger{36}] - Exposing 1 endpoint beneath base path '/actuator'
+2025-07-25 14:22:04.730 [restartedMain] [INFO] [logger{36}] - Tomcat started on port 8080 (http) with context path '/'
+2025-07-25 14:22:04.740 [restartedMain] [INFO] [logger{36}] - Started CustomApplication in 1.817 seconds (process running for 612.926)
+2025-07-25 14:22:04.741 [restartedMain] [INFO] [logger{36}] - Running default command line with: []
+2025-07-25 14:22:04.744 [restartedMain] [INFO] [logger{36}] - Condition evaluation unchanged
+2025-07-25 14:22:10.122 [main] [INFO] [logger{36}] - Starting CustomApplicationTests using Java 21.0.8 with PID 8584 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\test started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 14:22:10.126 [main] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 14:22:10.127 [main] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 14:22:20.341 [Test worker] [INFO] [logger{36}] - Starting CustomApplicationTests using Java 21.0.8 with PID 4684 (started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 14:22:20.345 [Test worker] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 14:22:20.346 [Test worker] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 14:22:22.590 [Test worker] [INFO] [logger{36}] - Initializing Spring TestDispatcherServlet ''
+2025-07-25 14:22:22.591 [Test worker] [INFO] [logger{36}] - Initializing Servlet ''
+2025-07-25 14:22:22.595 [Test worker] [INFO] [logger{36}] - Completed initialization in 2 ms
+2025-07-25 14:22:22.657 [Test worker] [INFO] [logger{36}] - Started CustomApplicationTests in 4.203 seconds (process running for 6.839)
+2025-07-25 14:23:32.268 [File Watcher] [INFO] [logger{36}] - Restarting due to 3 class path changes (0 additions, 0 deletions, 3 modifications)
+2025-07-25 14:23:32.269 [Thread-21] [INFO] [logger{36}] - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-25 14:23:32.275 [tomcat-shutdown] [INFO] [logger{36}] - Graceful shutdown complete
+2025-07-25 14:23:32.280 [Thread-21] [INFO] [logger{36}] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-25 14:23:32.280 [Thread-21] [INFO] [logger{36}] - HikariPool-4 - Shutdown initiated...
+2025-07-25 14:23:32.286 [Thread-21] [INFO] [logger{36}] - HikariPool-4 - Shutdown completed.
+2025-07-25 14:23:32.445 [restartedMain] [INFO] [logger{36}] - Starting CustomApplication using Java 21.0.8 with PID 14072 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\main started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 14:23:32.445 [restartedMain] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 14:23:32.445 [restartedMain] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 14:23:33.174 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 14:23:33.174 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-07-25 14:23:33.179 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 3 ms. Found 0 JDBC repository interfaces.
+2025-07-25 14:23:33.186 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 14:23:33.186 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-25 14:23:33.191 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2025-07-25 14:23:33.194 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 14:23:33.194 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-25 14:23:33.199 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2025-07-25 14:23:33.301 [restartedMain] [INFO] [logger{36}] - Tomcat initialized with port 8080 (http)
+2025-07-25 14:23:33.302 [restartedMain] [INFO] [logger{36}] - Starting service [Tomcat]
+2025-07-25 14:23:33.302 [restartedMain] [INFO] [logger{36}] - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-07-25 14:23:33.410 [restartedMain] [INFO] [logger{36}] - Initializing Spring embedded WebApplicationContext
+2025-07-25 14:23:33.410 [restartedMain] [INFO] [logger{36}] - Root WebApplicationContext: initialization completed in 959 ms
+2025-07-25 14:23:33.468 [restartedMain] [INFO] [logger{36}] - HikariPool-5 - Starting...
+2025-07-25 14:23:33.505 [restartedMain] [INFO] [logger{36}] - HikariPool-5 - Added connection org.postgresql.jdbc.PgConnection@358bf036
+2025-07-25 14:23:33.505 [restartedMain] [INFO] [logger{36}] - HikariPool-5 - Start completed.
+2025-07-25 14:23:33.525 [restartedMain] [INFO] [logger{36}] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-25 14:23:33.537 [restartedMain] [INFO] [logger{36}] - HHH000026: Second-level cache disabled
+2025-07-25 14:23:33.558 [restartedMain] [INFO] [logger{36}] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-25 14:23:33.565 [restartedMain] [WARN] [logger{36}] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-25 14:23:33.569 [restartedMain] [INFO] [logger{36}] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-5)']
+	Database driver: undefined/unknown
+	Database version: 15.13
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-25 14:23:33.569 [restartedMain] [DEBUG] [logger{36}] - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@3091ae13) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@114a1470)
+2025-07-25 14:23:33.570 [restartedMain] [DEBUG] [logger{36}] - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@740e6539) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@8ea2d19)
+2025-07-25 14:23:33.610 [restartedMain] [INFO] [logger{36}] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-25 14:23:33.610 [restartedMain] [INFO] [logger{36}] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-25 14:23:33.640 [restartedMain] [WARN] [logger{36}] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-25 14:23:33.936 [restartedMain] [INFO] [logger{36}] - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-07-25 14:23:33.947 [restartedMain] [INFO] [logger{36}] - LiveReload server is running on port 35729
+2025-07-25 14:23:33.949 [restartedMain] [INFO] [logger{36}] - Exposing 1 endpoint beneath base path '/actuator'
+2025-07-25 14:23:33.979 [restartedMain] [INFO] [logger{36}] - Tomcat started on port 8080 (http) with context path '/'
+2025-07-25 14:23:33.987 [restartedMain] [INFO] [logger{36}] - Started CustomApplication in 1.611 seconds (process running for 702.173)
+2025-07-25 14:23:33.988 [restartedMain] [INFO] [logger{36}] - Running default command line with: []
+2025-07-25 14:23:33.989 [restartedMain] [INFO] [logger{36}] - Condition evaluation unchanged
+2025-07-25 14:24:06.733 [main] [INFO] [logger{36}] - Starting CustomApplicationTests using Java 21.0.8 with PID 10048 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\test started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 14:24:06.736 [main] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 14:24:06.737 [main] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 14:24:16.149 [Test worker] [INFO] [logger{36}] - Starting CustomApplicationTests using Java 21.0.8 with PID 22148 (started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 14:24:16.151 [Test worker] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 14:24:16.152 [Test worker] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 14:24:17.700 [Test worker] [INFO] [logger{36}] - Initializing Spring TestDispatcherServlet ''
+2025-07-25 14:24:17.700 [Test worker] [INFO] [logger{36}] - Initializing Servlet ''
+2025-07-25 14:24:17.702 [Test worker] [INFO] [logger{36}] - Completed initialization in 1 ms
+2025-07-25 14:24:17.736 [Test worker] [INFO] [logger{36}] - Started CustomApplicationTests in 3.222 seconds (process running for 5.292)
+2025-07-25 14:27:41.360 [File Watcher] [INFO] [logger{36}] - Restarting due to 4 class path changes (0 additions, 4 deletions, 0 modifications)
+2025-07-25 14:27:41.363 [Thread-27] [INFO] [logger{36}] - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-25 14:27:41.368 [tomcat-shutdown] [INFO] [logger{36}] - Graceful shutdown complete
+2025-07-25 14:27:41.376 [Thread-27] [INFO] [logger{36}] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-25 14:27:41.377 [Thread-27] [INFO] [logger{36}] - HikariPool-5 - Shutdown initiated...
+2025-07-25 14:27:41.384 [Thread-27] [INFO] [logger{36}] - HikariPool-5 - Shutdown completed.
+2025-07-25 14:27:41.564 [restartedMain] [INFO] [logger{36}] - Starting CustomApplication using Java 21.0.8 with PID 14072 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\main started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 14:27:41.565 [restartedMain] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 14:27:41.565 [restartedMain] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 14:27:42.771 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 14:27:42.771 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-07-25 14:27:42.778 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 4 ms. Found 0 JDBC repository interfaces.
+2025-07-25 14:27:42.791 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 14:27:42.791 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-25 14:27:42.797 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2025-07-25 14:27:42.804 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 14:27:42.804 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-25 14:27:42.811 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2025-07-25 14:27:43.136 [restartedMain] [INFO] [logger{36}] - Tomcat initialized with port 8080 (http)
+2025-07-25 14:27:43.146 [restartedMain] [INFO] [logger{36}] - Starting service [Tomcat]
+2025-07-25 14:27:43.146 [restartedMain] [INFO] [logger{36}] - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-07-25 14:27:43.286 [restartedMain] [INFO] [logger{36}] - Initializing Spring embedded WebApplicationContext
+2025-07-25 14:27:43.286 [restartedMain] [INFO] [logger{36}] - Root WebApplicationContext: initialization completed in 1715 ms
+2025-07-25 14:27:43.376 [restartedMain] [INFO] [logger{36}] - HikariPool-6 - Starting...
+2025-07-25 14:27:43.401 [restartedMain] [INFO] [logger{36}] - HikariPool-6 - Added connection org.postgresql.jdbc.PgConnection@3d45e3c4
+2025-07-25 14:27:43.401 [restartedMain] [INFO] [logger{36}] - HikariPool-6 - Start completed.
+2025-07-25 14:27:43.419 [restartedMain] [INFO] [logger{36}] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-25 14:27:43.433 [restartedMain] [INFO] [logger{36}] - HHH000026: Second-level cache disabled
+2025-07-25 14:27:43.463 [restartedMain] [INFO] [logger{36}] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-25 14:27:43.470 [restartedMain] [WARN] [logger{36}] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-25 14:27:43.473 [restartedMain] [INFO] [logger{36}] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-6)']
+	Database driver: undefined/unknown
+	Database version: 15.13
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-25 14:27:43.474 [restartedMain] [DEBUG] [logger{36}] - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@4207774f) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@3b33f899)
+2025-07-25 14:27:43.474 [restartedMain] [DEBUG] [logger{36}] - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@7cff3af6) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@2648a037)
+2025-07-25 14:27:43.519 [restartedMain] [INFO] [logger{36}] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-25 14:27:43.519 [restartedMain] [INFO] [logger{36}] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-25 14:27:43.563 [restartedMain] [WARN] [logger{36}] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-25 14:27:44.388 [restartedMain] [INFO] [logger{36}] - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-07-25 14:27:44.503 [restartedMain] [INFO] [logger{36}] - LiveReload server is running on port 35729
+2025-07-25 14:27:44.510 [restartedMain] [INFO] [logger{36}] - Exposing 1 endpoint beneath base path '/actuator'
+2025-07-25 14:27:44.623 [restartedMain] [INFO] [logger{36}] - Tomcat started on port 8080 (http) with context path '/'
+2025-07-25 14:27:44.652 [restartedMain] [INFO] [logger{36}] - Started CustomApplication in 3.177 seconds (process running for 952.839)
+2025-07-25 14:27:44.658 [restartedMain] [INFO] [logger{36}] - Running default command line with: []
+2025-07-25 14:27:44.662 [restartedMain] [INFO] [logger{36}] - Condition evaluation unchanged
+2025-07-25 14:27:46.999 [File Watcher] [INFO] [logger{36}] - Restarting due to 4 class path changes (4 additions, 0 deletions, 0 modifications)
+2025-07-25 14:27:47.001 [Thread-33] [INFO] [logger{36}] - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-25 14:27:47.006 [tomcat-shutdown] [INFO] [logger{36}] - Graceful shutdown complete
+2025-07-25 14:27:47.013 [Thread-33] [INFO] [logger{36}] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-25 14:27:47.015 [Thread-33] [INFO] [logger{36}] - HikariPool-6 - Shutdown initiated...
+2025-07-25 14:27:47.021 [Thread-33] [INFO] [logger{36}] - HikariPool-6 - Shutdown completed.
+2025-07-25 14:27:47.186 [restartedMain] [INFO] [logger{36}] - Starting CustomApplication using Java 21.0.8 with PID 14072 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\main started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 14:27:47.187 [restartedMain] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 14:27:47.187 [restartedMain] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 14:27:48.404 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 14:27:48.405 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-07-25 14:27:48.412 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 5 ms. Found 0 JDBC repository interfaces.
+2025-07-25 14:27:48.421 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 14:27:48.421 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-25 14:27:48.427 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2025-07-25 14:27:48.433 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 14:27:48.434 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-25 14:27:48.442 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2025-07-25 14:27:48.638 [restartedMain] [INFO] [logger{36}] - Tomcat initialized with port 8080 (http)
+2025-07-25 14:27:48.639 [restartedMain] [INFO] [logger{36}] - Starting service [Tomcat]
+2025-07-25 14:27:48.640 [restartedMain] [INFO] [logger{36}] - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-07-25 14:27:48.779 [restartedMain] [INFO] [logger{36}] - Initializing Spring embedded WebApplicationContext
+2025-07-25 14:27:48.779 [restartedMain] [INFO] [logger{36}] - Root WebApplicationContext: initialization completed in 1585 ms
+2025-07-25 14:27:48.830 [restartedMain] [INFO] [logger{36}] - HikariPool-7 - Starting...
+2025-07-25 14:27:48.853 [restartedMain] [INFO] [logger{36}] - HikariPool-7 - Added connection org.postgresql.jdbc.PgConnection@58cabf59
+2025-07-25 14:27:48.853 [restartedMain] [INFO] [logger{36}] - HikariPool-7 - Start completed.
+2025-07-25 14:27:48.867 [restartedMain] [INFO] [logger{36}] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-25 14:27:48.880 [restartedMain] [INFO] [logger{36}] - HHH000026: Second-level cache disabled
+2025-07-25 14:27:48.908 [restartedMain] [INFO] [logger{36}] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-25 14:27:48.917 [restartedMain] [WARN] [logger{36}] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-25 14:27:48.922 [restartedMain] [INFO] [logger{36}] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-7)']
+	Database driver: undefined/unknown
+	Database version: 15.13
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-25 14:27:48.923 [restartedMain] [DEBUG] [logger{36}] - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@4a571c54) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@49299335)
+2025-07-25 14:27:48.923 [restartedMain] [DEBUG] [logger{36}] - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@75529bd7) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@6a7ff01)
+2025-07-25 14:27:48.977 [restartedMain] [INFO] [logger{36}] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-25 14:27:48.977 [restartedMain] [INFO] [logger{36}] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-25 14:27:49.029 [restartedMain] [WARN] [logger{36}] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-25 14:27:49.551 [restartedMain] [INFO] [logger{36}] - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-07-25 14:27:49.573 [restartedMain] [INFO] [logger{36}] - LiveReload server is running on port 35729
+2025-07-25 14:27:49.578 [restartedMain] [INFO] [logger{36}] - Exposing 1 endpoint beneath base path '/actuator'
+2025-07-25 14:27:49.625 [restartedMain] [INFO] [logger{36}] - Tomcat started on port 8080 (http) with context path '/'
+2025-07-25 14:27:49.637 [restartedMain] [INFO] [logger{36}] - Started CustomApplication in 2.529 seconds (process running for 957.823)
+2025-07-25 14:27:49.638 [restartedMain] [INFO] [logger{36}] - Running default command line with: []
+2025-07-25 14:27:49.644 [restartedMain] [INFO] [logger{36}] - Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+    None
+
+
+Negative matches:
+-----------------
+
+   LogAspect:
+      Did not match:
+         - @ConditionalOnProperty (aspect.logging.enabled=true) did not find property 'aspect.logging.enabled' (OnPropertyCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2025-07-25 14:28:39.960 [http-nio-8080-exec-1] [INFO] [logger{36}] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-25 14:28:39.960 [http-nio-8080-exec-1] [INFO] [logger{36}] - Initializing Servlet 'dispatcherServlet'
+2025-07-25 14:28:39.963 [http-nio-8080-exec-1] [INFO] [logger{36}] - Completed initialization in 3 ms
+2025-07-25 14:29:04.598 [SpringApplicationShutdownHook] [INFO] [logger{36}] - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-25 14:29:04.603 [tomcat-shutdown] [INFO] [logger{36}] - Graceful shutdown complete
+2025-07-25 14:29:04.609 [SpringApplicationShutdownHook] [INFO] [logger{36}] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-25 14:29:04.610 [SpringApplicationShutdownHook] [INFO] [logger{36}] - HikariPool-7 - Shutdown initiated...
+2025-07-25 14:29:04.615 [SpringApplicationShutdownHook] [INFO] [logger{36}] - HikariPool-7 - Shutdown completed.
+2025-07-25 14:29:09.997 [restartedMain] [INFO] [logger{36}] - Starting CustomApplication using Java 21.0.8 with PID 13944 (C:\Users\moveint\IdeaProjects\tutorials\custom\build\classes\java\main started by moveint in C:\Users\moveint\IdeaProjects\tutorials\custom)
+2025-07-25 14:29:10.000 [restartedMain] [DEBUG] [logger{36}] - Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-07-25 14:29:10.000 [restartedMain] [INFO] [logger{36}] - No active profile set, falling back to 1 default profile: "default"
+2025-07-25 14:29:10.057 [restartedMain] [INFO] [logger{36}] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-25 14:29:10.057 [restartedMain] [INFO] [logger{36}] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-25 14:29:11.927 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 14:29:11.930 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-07-25 14:29:11.959 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 20 ms. Found 0 JDBC repository interfaces.
+2025-07-25 14:29:11.976 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 14:29:11.978 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-25 14:29:11.988 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2025-07-25 14:29:12.004 [restartedMain] [INFO] [logger{36}] - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-07-25 14:29:12.006 [restartedMain] [INFO] [logger{36}] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-25 14:29:12.026 [restartedMain] [INFO] [logger{36}] - Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2025-07-25 14:29:12.958 [restartedMain] [INFO] [logger{36}] - Tomcat initialized with port 8080 (http)
+2025-07-25 14:29:12.978 [restartedMain] [INFO] [logger{36}] - Starting service [Tomcat]
+2025-07-25 14:29:12.978 [restartedMain] [INFO] [logger{36}] - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-07-25 14:29:13.144 [restartedMain] [INFO] [logger{36}] - Initializing Spring embedded WebApplicationContext
+2025-07-25 14:29:13.144 [restartedMain] [INFO] [logger{36}] - Root WebApplicationContext: initialization completed in 3086 ms
+2025-07-25 14:29:13.414 [restartedMain] [INFO] [logger{36}] - HikariPool-1 - Starting...
+2025-07-25 14:29:13.578 [restartedMain] [INFO] [logger{36}] - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@77b6c7aa
+2025-07-25 14:29:13.580 [restartedMain] [INFO] [logger{36}] - HikariPool-1 - Start completed.
+2025-07-25 14:29:13.682 [restartedMain] [INFO] [logger{36}] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-25 14:29:13.774 [restartedMain] [INFO] [logger{36}] - HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-07-25 14:29:13.829 [restartedMain] [INFO] [logger{36}] - HHH000026: Second-level cache disabled
+2025-07-25 14:29:14.251 [restartedMain] [INFO] [logger{36}] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-25 14:29:14.330 [restartedMain] [WARN] [logger{36}] - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-25 14:29:14.353 [restartedMain] [INFO] [logger{36}] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.13
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-25 14:29:14.362 [restartedMain] [DEBUG] [logger{36}] - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@244e5a73) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@eb4881c)
+2025-07-25 14:29:14.362 [restartedMain] [DEBUG] [logger{36}] - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@47180c56) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@263c1116)
+2025-07-25 14:29:14.840 [restartedMain] [INFO] [logger{36}] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-25 14:29:14.847 [restartedMain] [INFO] [logger{36}] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-25 14:29:15.004 [restartedMain] [WARN] [logger{36}] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-25 14:29:15.080 [restartedMain] [INFO] [logger{36}] - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-07-25 14:29:16.379 [restartedMain] [INFO] [logger{36}] - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-07-25 14:29:16.817 [restartedMain] [INFO] [logger{36}] - LiveReload server is running on port 35729
+2025-07-25 14:29:16.823 [restartedMain] [INFO] [logger{36}] - Exposing 1 endpoint beneath base path '/actuator'
+2025-07-25 14:29:16.914 [restartedMain] [INFO] [logger{36}] - Tomcat started on port 8080 (http) with context path '/'
+2025-07-25 14:29:16.930 [restartedMain] [INFO] [logger{36}] - Started CustomApplication in 8.056 seconds (process running for 9.466)
+2025-07-25 14:29:16.938 [restartedMain] [INFO] [logger{36}] - Running default command line with: []
+2025-07-25 14:29:17.561 [RMI TCP Connection(4)-10.10.20.94] [INFO] [logger{36}] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-25 14:29:17.561 [RMI TCP Connection(4)-10.10.20.94] [INFO] [logger{36}] - Initializing Servlet 'dispatcherServlet'
+2025-07-25 14:29:17.564 [RMI TCP Connection(4)-10.10.20.94] [INFO] [logger{36}] - Completed initialization in 3 ms
+2025-07-25 14:29:30.944 [http-nio-8080-exec-10] [INFO] [logger{36}] - Init duration for springdoc-openapi is: 552 ms
+2025-07-25 17:32:16.575 [SpringApplicationShutdownHook] [INFO] [logger{36}] - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-25 17:32:16.622 [tomcat-shutdown] [INFO] [logger{36}] - Graceful shutdown complete
+2025-07-25 17:32:16.740 [SpringApplicationShutdownHook] [INFO] [logger{36}] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-25 17:32:16.768 [SpringApplicationShutdownHook] [INFO] [logger{36}] - HikariPool-1 - Shutdown initiated...
+2025-07-25 17:32:16.786 [SpringApplicationShutdownHook] [INFO] [logger{36}] - HikariPool-1 - Shutdown completed.

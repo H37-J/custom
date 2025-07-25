@@ -1,0 +1,195 @@
+
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.5.4'
+    id 'io.spring.dependency-management' version '1.1.7'
+    id 'org.hibernate.orm' version '6.6.22.Final'
+    id 'org.graalvm.buildtools.native' version '0.10.6'
+    id 'org.asciidoctor.jvm.convert' version '3.3.2'
+}
+
+group = 'com.hjk'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    set('snippetsDir', file("build/generated-snippets"))
+}
+
+dependencies {
+
+    implementation 'org.springframework.boot:spring-boot-starter-batch'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0'
+    implementation 'org.springframework.boot:spring-boot-starter-web-services'
+    implementation 'org.springframework.kafka:spring-kafka'
+
+    compileOnly 'org.projectlombok:lombok'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    runtimeOnly 'org.postgresql:postgresql'
+
+    // JSON
+    implementation 'com.google.code.gson:gson:2.9.0'
+
+    // AMP
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'io.micrometer:micrometer-registry-prometheus'
+    implementation 'net.logstash.logback:logstash-logback-encoder:7.4'
+
+    // Lombok
+    annotationProcessor 'org.projectlombok:lombok'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.batch:spring-batch-test'
+    testImplementation 'org.springframework.kafka:spring-kafka-test'
+    testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+}
+
+hibernate {
+    enhancement {
+        enableAssociationManagement = true
+    }
+}
+
+tasks.named('test') {
+    outputs.dir snippetsDir
+    useJUnitPlatform()
+}
+
+tasks.named('asciidoctor') {
+    sourceDir 'src/main/docs/asciidoc'
+    inputs.dir(snippetsDir)
+    attributes "snippets": snippetsDir, "encoding": "UTF-8"
+    dependsOn(tasks.named("test"))
+    doFirst {
+        delete(file("src/main/resources/static/docs"))
+    }
+    doLast {
+        copy {
+            from("build/docs/asciidoc")
+            into("src/main/resources/static/docs")
+        }
+    }
+}
+
+
+tasks.named("build") {
+    dependsOn(tasks.named("asciidoctor"))
+}
+
+// k6 부하 테스트 자동화를 위한 태스크
+task generateK6Scripts(dependsOn: test) {
+    description = 'Generates k6 load test scripts from Spring REST Docs snippets.'
+    group = 'k6'
+
+    doLast {
+        def snippetsDir = file("build/generated-snippets")
+        def k6ScriptsDir = file("src/test/k6")
+
+        if (!k6ScriptsDir.exists()) {
+            k6ScriptsDir.mkdirs()
+            println "Created directory: ${k6ScriptsDir}"
+        }
+
+        if (!snippetsDir.exists()) {
+            println "Snippets directory not found. Skipping k6 script generation."
+            return
+        }
+
+        snippetsDir.eachDir {
+            snippetDir ->
+                def curlFile = file("${snippetDir}/curl-request.adoc")
+                if (curlFile.exists()) {
+                    def curlCommand = curlFile.text.replace('\$ ', '').replaceAll('(?m)^\\s*|\\s*$', '').replace(' \\', '')
+
+                    def method = (curlCommand =~ /-X\\s+(\\w+)/).find() ? (curlCommand =~ /-X\\s+(\\w+)/)[0][1].toLowerCase() : 'get'
+                    def url = (curlCommand =~ /'([^']*)'/).find() ? (curlCommand =~ /'([^']*)'/)[0][1] : ''
+                    def body = (curlCommand =~ /-d\\s+'([^']*)'/).find() ? "'\${(curlCommand =~ /-d\\s+'([^']*)'/)[0][1]}'" : 'null'
+
+                    def headersList = []
+                    (curlCommand =~ /-H\\s+'([^']*)'/).each {
+                        match ->
+                            def header = match[1]
+                            def (key, value) = header.split(': ', 2)
+                            headersList.add("'${key}': '${value}'")
+                    }
+                    def headers = headersList.isEmpty() ? '{}' : "{ ${headersList.join(', ')} }"
+
+                    def k6HttpCall = (method == 'get' || method == 'del') ? "http.${method}(url, params);" : "http.${method}(url, payload, params);"
+
+                    def scriptContent = """
+                import http from 'k6/http';
+                import { check, sleep } from 'k6';
+
+                export const options = {
+                  vus: 10,
+                  duration: '30s',
+                  thresholds: {
+                    http_req_failed: ['rate < 0.01'], // http errors should be less than 1%
+                    http_req_duration: ['p(95) < 500'], // 95% of requests should be below 200ms
+                  },
+                };
+
+                export default function () {
+                  const url = '${url}';
+                  const params = {
+                    headers: ${headers},
+                  };
+                  const payload = ${body};
+
+                  const res = ${k6HttpCall}
+
+                  check(res, {
+                    'status is 200': (r) => r.status == 200,
+                  });
+
+                  sleep(1);
+                }
+                """.stripIndent()
+
+                    def k6ScriptFile = file("${k6ScriptsDir}/${snippetDir.name}.js")
+                    k6ScriptFile.write(scriptContent)
+                    println "Generated k6 script: ${k6ScriptFile}"
+                }
+        }
+    }
+}
+
+task runK6LoadTest(type: Exec, dependsOn: generateK6Scripts) {
+    description = 'Runs all generated k6 load tests.'
+    group = 'k6'
+
+    workingDir 'src/test/k6'
+
+    doFirst {
+        def k6ScriptsDir = file('src/test/k6')
+        if (!k6ScriptsDir.exists() || k6ScriptsDir.listFiles({ f -> f.name.endsWith('.js') } as FileFilter).length == 0) {
+            throw new StopExecutionException("No k6 scripts found in src/test/k6. Run 'generateK6Scripts' task first.")
+        }
+    }
+
+    commandLine 'k6', 'run', '.'
+}
