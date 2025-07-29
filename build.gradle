@@ -1,4 +1,3 @@
-
 plugins {
     id 'java'
     id 'org.springframework.boot' version '3.5.4'
@@ -102,94 +101,120 @@ tasks.named("build") {
 
 // k6 부하 테스트 자동화를 위한 태스크
 task generateK6Scripts(dependsOn: test) {
-    description = 'Generates k6 load test scripts from Spring REST Docs snippets.'
+    description = 'Generates a single k6 load test script from all Spring REST Docs snippets.'
     group = 'k6'
 
     doLast {
         def snippetsDir = file("build/generated-snippets")
         def k6ScriptsDir = file("src/test/k6")
+        def combinedScriptFile = file("${k6ScriptsDir}/combined-test.js")
 
         if (!k6ScriptsDir.exists()) {
             k6ScriptsDir.mkdirs()
             println "Created directory: ${k6ScriptsDir}"
         }
 
-        if (!snippetsDir.exists()) {
+        if (!snippetsDir.exists() || !snippetsDir.isDirectory()) {
             println "Snippets directory not found. Skipping k6 script generation."
             return
         }
 
-        snippetsDir.eachDir {
-            snippetDir ->
-                def curlFile = file("${snippetDir}/curl-request.adoc")
-                if (curlFile.exists()) {
-                    def curlCommand = curlFile.text.replace('\$ ', '').replaceAll('(?m)^\\s*|\\s*$', '').replace(' \\', '')
+        def scenarios = []
+        def functions = []
 
-                    def method = (curlCommand =~ /-X\\s+(\\w+)/).find() ? (curlCommand =~ /-X\\s+(\\w+)/)[0][1].toLowerCase() : 'get'
-                    def url = (curlCommand =~ /'([^']*)'/).find() ? (curlCommand =~ /'([^']*)'/)[0][1] : ''
-                    def body = (curlCommand =~ /-d\\s+'([^']*)'/).find() ? "'\${(curlCommand =~ /-d\\s+'([^']*)'/)[0][1]}'" : 'null'
+        snippetsDir.eachDir { snippetDir ->
+            def curlFile = file("${snippetDir}/curl-request.adoc")
+            if (curlFile.exists()) {
+                def curlCommand = curlFile.text.replace('\$ ', '').replaceAll('(?m)^\\s*|\\s*$', '').replace(' \\', '')
 
-                    def headersList = []
-                    (curlCommand =~ /-H\\s+'([^']*)'/).each {
-                        match ->
-                            def header = match[1]
-                            def (key, value) = header.split(': ', 2)
-                            headersList.add("'${key}': '${value}'")
-                    }
-                    def headers = headersList.isEmpty() ? '{}' : "{ ${headersList.join(', ')} }"
+                def method = (curlCommand =~ /-X\\s+(\\w+)/).find() ? (curlCommand =~ /-X\\s+(\\w+)/)[0][1].toLowerCase() : 'get'
+                def url = (curlCommand =~ /'([^']*)'/).find() ? (curlCommand =~ /'([^']*)'/)[0][1] : ''
 
-                    def k6HttpCall = (method == 'get' || method == 'del') ? "http.${method}(url, params);" : "http.${method}(url, payload, params);"
+                // Use backticks for the body to handle complex JSON strings safely
+                def bodyMatch = (curlCommand =~ /-d\\s+'([^']*)'/)
+                def body = bodyMatch.find() ? "`${bodyMatch[0][1]}`" : 'null'
 
-                    def scriptContent = """
-                import http from 'k6/http';
-                import { check, sleep } from 'k6';
-
-                export const options = {
-                  vus: 10,
-                  duration: '30s',
-                  thresholds: {
-                    http_req_failed: ['rate < 0.01'], // http errors should be less than 1%
-                    http_req_duration: ['p(95) < 500'], // 95% of requests should be below 200ms
-                  },
-                };
-
-                export default function () {
-                  const url = '${url}';
-                  const params = {
-                    headers: ${headers},
-                  };
-                  const payload = ${body};
-
-                  const res = ${k6HttpCall}
-
-                  check(res, {
-                    'status is 200': (r) => r.status == 200,
-                  });
-
-                  sleep(1);
+                def headersList = []
+                (curlCommand =~ /-H\\s+'([^']*)'/).each { match ->
+                    def header = match[1]
+                    def (key, value) = header.split(': ', 2)
+                    headersList.add("'${key}': '${value}'")
                 }
-                """.stripIndent()
+                def headers = headersList.isEmpty() ? '{}' : "{ ${headersList.join(', ')} }"
 
-                    def k6ScriptFile = file("${k6ScriptsDir}/${snippetDir.name}.js")
-                    k6ScriptFile.write(scriptContent)
-                    println "Generated k6 script: ${k6ScriptFile}"
+                def functionName = "test_${snippetDir.name.replaceAll('[^a-zA-Z0-9_]', '_')}"
+                def k6HttpCall = (method == 'get' || method == 'del') ? "http.${method}(url, params);" : "http.${method}(url, payload, params);"
+
+                // Add scenario entry
+                scenarios.add("""
+            ${functionName}: {
+                executor: 'constant-vus',
+                exec: '${functionName}',
+                vus: 1,
+                duration: '10s',
+            }
+            """.stripIndent())
+
+                // Add test function
+                functions.add("""
+                export function ${functionName}() {
+                    const url = '${url}';
+                    const params = { headers: ${headers} };
+                    const payload = ${body};
+
+                    const res = ${k6HttpCall}
+
+                    check(res, {
+                        'status is 200 on ${snippetDir.name}': (r) => r.status === 200,
+                    });
                 }
+                """.stripIndent())
+            }
         }
+
+        if (scenarios.isEmpty()) {
+            println "No valid snippets found to generate a k6 script."
+            if (combinedScriptFile.exists()) {
+                combinedScriptFile.delete()
+            }
+            return
+        }
+
+        def scriptContent = """
+        import http from 'k6/http';
+        import { check } from 'k6';
+
+        export const options = {
+            scenarios: {
+                ${scenarios.join(',\n')}
+            },
+            thresholds: {
+                http_req_failed: ['rate < 0.01'],  
+                http_req_duration: ['p(95) < 500'], 
+            },
+        };
+
+        ${functions.join('\n\n')}
+        """.stripIndent()
+
+        combinedScriptFile.write(scriptContent)
+        println "Generated combined k6 script: ${combinedScriptFile}"
     }
 }
 
 task runK6LoadTest(type: Exec, dependsOn: generateK6Scripts) {
-    description = 'Runs all generated k6 load tests.'
+    description = 'Runs the combined k6 load test.'
     group = 'k6'
 
     workingDir 'src/test/k6'
 
+    // Always run the specific combined test script
+    commandLine 'k6', 'run', 'combined-test.js'
+
     doFirst {
-        def k6ScriptsDir = file('src/test/k6')
-        if (!k6ScriptsDir.exists() || k6ScriptsDir.listFiles({ f -> f.name.endsWith('.js') } as FileFilter).length == 0) {
-            throw new StopExecutionException("No k6 scripts found in src/test/k6. Run 'generateK6Scripts' task first.")
+        def k6ScriptFile = file('src/test/k6/combined-test.js')
+        if (!k6ScriptFile.exists()) {
+            throw new StopExecutionException("Combined k6 script not found. Run 'generateK6Scripts' task first.")
         }
     }
-
-    commandLine 'k6', 'run', '.'
 }
